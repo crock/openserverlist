@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Exceptions;
+namespace Enderlist\Exceptions;
 
 use Exception;
-use Illuminate\Session\TokenMismatchException;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -21,7 +20,6 @@ class Handler extends ExceptionHandler
         AuthorizationException::class,
         HttpException::class,
         ModelNotFoundException::class,
-        TokenMismatchException::class,
         ValidationException::class,
     ];
 

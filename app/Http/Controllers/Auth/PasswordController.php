@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Enderlist\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use Enderlist\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class PasswordController extends Controller
@@ -27,6 +27,6 @@ class PasswordController extends Controller
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware());
+        $this->middleware('guest');
     }
 }

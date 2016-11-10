@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Enderlist\Http\Controllers\Auth;
 
-use App\User;
+use Enderlist\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Enderlist\Http\Requests;
+use Enderlist\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -28,7 +29,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new authentication controller instance.
@@ -37,7 +38,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
 
     /**
@@ -49,9 +50,9 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'username' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|confirmed|min:6',
         ]);
     }
 
@@ -64,9 +65,33 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
+	
+	public function postSignin(Request $request) {
+		if (Auth::attempt(['email' => $request['email'], 'password' => $request['password']])) {
+			return redirect()->route('dashboard');
+		} else {
+			return back();
+		}
+	}
+	
+	public function postRegister(Request $request) {
+		$username = $request['username'];
+		$email = $request['email'];
+		$password = bcrypt($request['password']);
+		
+		$user = new User();
+		$user->username = $username;
+		$user->email = $email;
+		$user->password = $password;
+		
+		$user->save();
+		Auth::login($user);
+		
+		return redirect()->route('dashboard');
+	}
 }

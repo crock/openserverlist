@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Enderlist\Events;
 
 abstract class Event
 {

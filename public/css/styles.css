@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+/*
++------------------------------------+
+|                                    |
+|           General Styles           |
+|                                    |
++------------------------------------+
+*/
+
+body {
+	background: #111;
+	font-family: 'Roboto', sans-serif;
+}
+
+.swrapper {
+	width: 468px;
+	margin: 100px auto;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.section h1 {
+	font-size: 2em;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+	color: #000;
+	text-align: left;
+	color: #fff;
+}
+
+.section h3 {
+	font-size: 1.3em;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #fff;
+	text-align: left;
+}
+
+.navbar-brand {
+	position: absolute;
+	left: 50%;
+}
+
+.navbar-brand img {
+	width: 250px;
+	height: auto;
+	position: relative;
+	left: -50%;
+	top: -75px;
+	z-index: 5;
+}
+
+/*
++------------------------------------+
+|                                    |
+|             Navigation             |
+|                                    |
++------------------------------------+
+*/
+
+.navbar {
+	margin-top: 50px;
+	border-radius: 15px;
+	z-index: 10;
+	font-family: 'Roboto', sans-serif !important;
+}
+
+.randomize:hover i {
+	color: purple;
+}
+
+
+
+/*
++------------------------------------+
+|                                    |
+|           Search Bar               |
+|                                    |
++------------------------------------+
+*/
+
+
+
+/*
++------------------------------------+
+|                                    |
+|           Form Styles              |
+|                                    |
++------------------------------------+
+*/
+.form-group label {
+	font-weight: 300;
+	color: #fff;
+}
+
+.form-group h3 {
+	font-family: 'Arial', sans-serif;
+	font-size: 0.8em;
+	color: #8c8c8c;
+	margin: 0;
+	padding-bottom: 10px;
+}
+
+/*
++------------------------------------+
+|                                    |
+|       Server List Styles           |
+|                                    |
++------------------------------------+
+*/
+
+.push {
+	overflow: hidden;
+	list-style-type: none;
+	font-weight: 300;
+}
+.push {
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+.push li {
+	height: 60px;
+	line-height: 60px;
+	color: #555;
+	position: relative;
+	@include ellipsis();
+}
+
+.push li label {
+	background: url(http://minecraftservers.org/banners/2987811475470590.gif);
+	width: 468px;
+	height: 60px;
+	display: inline-block;
+	padding: 0;
+}
+
+.push li label:hover {
+	background-color: rgba(0, 0, 0, 0.36);
+}
+
+.push li input[type=checkbox] {
+	display: none;
+}
+
+.push li nav {
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: translatex(100%);
+	transition: all .5s ease;
+	font-size: 0;
+}
+
+.push li nav a {
+	height: 100%;
+	display: inline-block;
+	padding: 0 20px;
+	color: #eee;
+	text-decoration: none;
+	font-size: 14px;
+}
+a.in {
+	background: #ed981a;
+}
+
+a.in:hover {
+	background: #bc7914;
+}
+
+a.ed {
+	background: #3498db;
+}
+
+a.ed:hover {
+	background: #2980b9;
+}
+
+a.rm {
+	background: #189747;
+}
+
+a.rm:hover {
+	background: #14873e;
+}
+
+.push li:hover {
+	color: #fff;
+}
+
+.push li:hover nav,
+.push li input:checked ~ nav {
+	transform: translatex(0);
+	transition: all .4s ease;
+}
+
+table {
+	width: 468px;
+	height: 90px;
+	font-size: 18px;
+	margin: 25px auto 100px auto;
+}
+
+table tr:first-of-type td {
+	background: #000;
+	border: 1px solid #fff;
+	color: #fff;
+	vertical-align: middle;
+	height: 30px;
+}
+table tr:last-of-type td {
+	border: 1px solid #fff;
+	height: 60px;
+}
+
+table tr:first-of-type .ranknum {
+	text-align: center;
+	background: #333;
+}
+
+.stitle {
+	text-indent: 10px;
+}
+
+.pcount {
+	text-align: right;
+	padding-right: 5px;
+}
+
+.small {
+	color: #e0e0e0;
+	font-size: smaller;
+}
+
+/*
++------------------------------------+
+|                                    |
+|           Footer Styles            |
+|                                    |
++------------------------------------+
+*/
+
+
+
+
+/*
++------------------------------------+
+|                                    |
+|           Responsive               |
+|                                    |
++------------------------------------+
+*/
+
+@media screen and (max-width: 767px) {
+	.navbar-brand {
+		position: relative;
+		left: 0;
+	}
+
+	.navbar-brand img {
+		width: 100px;
+		height: auto;
+		position: absolute;
+		left: -5%;
+		top: -15px;
+		z-index: 5;
+	}
+}
