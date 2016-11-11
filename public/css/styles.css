@@ -12,6 +12,11 @@
 body {
 	background: #111;
 	font-family: 'Roboto', sans-serif;
+	color: #fff;
+}
+
+.wrapper-fluid {
+	width: 100%;
 }
 
 .swrapper {
@@ -41,19 +46,6 @@ a:hover {
 	text-align: left;
 }
 
-.navbar-brand {
-	position: absolute;
-	left: 50%;
-}
-
-.navbar-brand img {
-	width: 250px;
-	height: auto;
-	position: relative;
-	left: -50%;
-	top: -75px;
-	z-index: 5;
-}
 
 /*
 +------------------------------------+
@@ -64,17 +56,51 @@ a:hover {
 */
 
 .navbar {
-	margin-top: 50px;
-	border-radius: 15px;
-	z-index: 10;
-	font-family: 'Roboto', sans-serif !important;
+	width: 100%;
+	height: 75px;
+	line-height: 75px;
+	background: purple;
+	background: -webkit-linear-gradient(#a549ff 0%, #450073 100%);
+	background: -o-linear-gradient(#a549ff 0%, #450073 100%);
+	background: -moz-linear-gradient(#a549ff 0%, #450073 100%);
+	background: linear-gradient(#a549ff 0%, #450073 100%);
 }
 
-.randomize:hover i {
-	color: purple;
+a {
+	text-decoration: none;
+	color: #fff;
 }
 
+.navbar h1 {
+	font-size: 26px;
+	font-weight: 400;
+	margin-left: 25px;
+	float: left;
+}
 
+.navbar h1 span {
+	font-weight: 300;
+}
+
+.navbar ul {
+	float: right;
+	margin-right: 25px;
+}
+
+.navbar ul li {
+	display: inline-block;
+}
+
+.navbar ul li a {
+	display: block;
+	padding: 0 25px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.navbar ul li a:hover {
+	background: rgba(0,0,0,0.5);
+}
 
 /*
 +------------------------------------+
@@ -84,7 +110,9 @@ a:hover {
 +------------------------------------+
 */
 
-
+#search {
+	float: left;
+}
 
 /*
 +------------------------------------+
@@ -93,18 +121,9 @@ a:hover {
 |                                    |
 +------------------------------------+
 */
-.form-group label {
-	font-weight: 300;
-	color: #fff;
-}
 
-.form-group h3 {
-	font-family: 'Arial', sans-serif;
-	font-size: 0.8em;
-	color: #8c8c8c;
-	margin: 0;
-	padding-bottom: 10px;
-}
+
+
 
 /*
 +------------------------------------+
@@ -257,17 +276,5 @@ table tr:first-of-type .ranknum {
 */
 
 @media screen and (max-width: 767px) {
-	.navbar-brand {
-		position: relative;
-		left: 0;
-	}
-
-	.navbar-brand img {
-		width: 100px;
-		height: auto;
-		position: absolute;
-		left: -5%;
-		top: -15px;
-		z-index: 5;
-	}
+	
 }
