@@ -23,15 +23,12 @@
 	<div class="wrapper-fluid">	
 		<nav class="navbar">
 			<a href="/"><h1>ender<span>list</span></h1></a>
-			<form id="search">
-				<input type="text" placeholder="Search" name="search">
-				<button type="submit"><i class="fa fa-search"></i></button>
-			</form>
 			<ul>
 				<li><a href="/dashboard">Dashboard</a></li>
 				<li><a href="/sponsored">Sponsored</a></li>
 				<li><a href="/login">Login</a></li>
 				<li><a href="/register">Register</a></li>
+				<li><a href="/search"><i class="fa fa-search"></i></a></li>
 			</ul>
 		</nav>
 	</div>

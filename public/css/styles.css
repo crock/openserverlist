@@ -12,6 +12,7 @@
 body {
 	background: #111;
 	font-family: 'Roboto', sans-serif;
+	font-size: 16pt;
 	color: #fff;
 }
 
@@ -59,7 +60,7 @@ a:hover {
 	width: 100%;
 	height: 75px;
 	line-height: 75px;
-	background: purple;
+	background: #670a98;
 	background: -webkit-linear-gradient(#a549ff 0%, #450073 100%);
 	background: -o-linear-gradient(#a549ff 0%, #450073 100%);
 	background: -moz-linear-gradient(#a549ff 0%, #450073 100%);
@@ -72,7 +73,7 @@ a {
 }
 
 .navbar h1 {
-	font-size: 26px;
+	font-size: 1.5em;
 	font-weight: 400;
 	margin-left: 25px;
 	float: left;
@@ -96,10 +97,19 @@ a {
 	padding: 0 25px;
 	text-decoration: none;
 	color: #fff;
+	font-size: 0.8em;
 }
 
 .navbar ul li a:hover {
 	background: rgba(0,0,0,0.5);
+}
+
+.navbar ul li:last-of-type a {
+	font-size: 1.2em;
+}
+
+.navbar ul li:last-of-type a:hover {
+	background: none;
 }
 
 /*
@@ -110,9 +120,7 @@ a {
 +------------------------------------+
 */
 
-#search {
-	float: left;
-}
+
 
 /*
 +------------------------------------+
