@@ -22,13 +22,18 @@
 	@section('navigation')
 	<div class="wrapper-fluid">	
 		<nav class="navbar">
-			<a href="/"><h1>ender<span>list</span></h1></a>
-			<ul>
-				<li><a href="/dashboard">Dashboard</a></li>
-				<li><a href="/sponsored">Sponsored</a></li>
-				<li><a href="/login">Login</a></li>
-				<li><a href="/register">Register</a></li>
-				<li><a href="/search"><i class="fa fa-search"></i></a></li>
+			<div class="navbar-header collapsed">
+				<div class="navbar-item"><button type="button" class="navsearch" href="#"><i class="fa fa-search"></i></button></div>
+				<div class="navbar-item"><a class="navlogo" href="/"><h1>ender<span>list</span></h1></a></div>
+				<div class="navbar-item"><button type="button" class="navtoggle"><i class="fa fa-bars"></i></button></div>
+			</div>	
+
+			<ul class="collapsible">
+				<li class="navitem"><a class="navlink" href="/dashboard">Dashboard</a></li>
+				<li class="navitem"><a class="navlink" href="/sponsored">Sponsored</a></li>
+				<li class="navitem"><a class="navlink" href="/login">Login</a></li>
+				<li class="navitem"><a class="navlink" href="/register">Register</a></li>
+				<li class="navitem"><a class="navlink" href="/search"><i class="fa fa-search"></i></a></li>
 			</ul>
 		</nav>
 	</div>

@@ -72,14 +72,14 @@ a {
 	color: #fff;
 }
 
-.navbar h1 {
+.navlogo h1 {
 	font-size: 1.5em;
 	font-weight: 400;
 	margin-left: 25px;
 	float: left;
 }
 
-.navbar h1 span {
+.navlogo h1 span {
 	font-weight: 300;
 }
 
@@ -88,11 +88,11 @@ a {
 	margin-right: 25px;
 }
 
-.navbar ul li {
+.navitem {
 	display: inline-block;
 }
 
-.navbar ul li a {
+.navlink {
 	display: block;
 	padding: 0 25px;
 	text-decoration: none;
@@ -100,16 +100,24 @@ a {
 	font-size: 0.8em;
 }
 
-.navbar ul li a:hover {
+.navlink:hover {
 	background: rgba(0,0,0,0.5);
 }
 
-.navbar ul li:last-of-type a {
+.navitem:last-of-type a {
 	font-size: 1.2em;
 }
 
-.navbar ul li:last-of-type a:hover {
+.navitem:last-of-type a:hover {
 	background: none;
+}
+
+.navsearch {
+	display: none;
+}
+
+.navtoggle {
+	display: none;
 }
 
 /*
@@ -284,5 +292,52 @@ table tr:first-of-type .ranknum {
 */
 
 @media screen and (max-width: 767px) {
+	.collapsible {
+		display: none;
+	}
 	
+/*
+	.navbar-header {
+		display: flex;
+	}
+	
+	.flex-item {
+		justify-content: space-around;
+	}
+*/
+	.navbar-header {
+	    text-align: justify;
+	    min-width: 320px;
+	}
+	.navbar-header:after {
+	    content: '';
+	    display: inline-block;
+	    width: 100%;
+	}
+	.navbar-item {
+	    display: inline-block;
+	}
+	
+	.navlogo {
+		width: 100px;
+		width: 75px;
+	}
+	
+	.navlogo h1 {
+		text-align: center;
+		float: none;
+		margin-left: 0;
+	}
+	
+	.navsearch {
+		display: block;
+		width: 75px;
+		height: 75px;
+	}
+	
+	.navtoggle {
+		display: block;
+		width: 75px;
+		height: 75px;
+	}
 }
