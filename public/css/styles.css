@@ -20,6 +20,10 @@ body {
 	width: 100%;
 }
 
+.hidden {
+	display: none;
+}
+
 .swrapper {
 	width: 468px;
 	margin: 100px auto;
@@ -60,11 +64,13 @@ a:hover {
 	width: 100%;
 	height: 75px;
 	line-height: 75px;
-	background: #670a98;
+	background: #8d21c7;
+/*
 	background: -webkit-linear-gradient(#a549ff 0%, #450073 100%);
 	background: -o-linear-gradient(#a549ff 0%, #450073 100%);
 	background: -moz-linear-gradient(#a549ff 0%, #450073 100%);
 	background: linear-gradient(#a549ff 0%, #450073 100%);
+*/
 }
 
 a {
@@ -104,14 +110,6 @@ a {
 	background: rgba(0,0,0,0.5);
 }
 
-.navitem:last-of-type a {
-	font-size: 1.2em;
-}
-
-.navitem:last-of-type a:hover {
-	background: none;
-}
-
 .navsearch {
 	display: none;
 }
@@ -128,6 +126,37 @@ a {
 +------------------------------------+
 */
 
+#search {
+	display: none;
+}
+
+.searchbar {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+}
+
+::-webkit-input-placeholder {
+   color: #adadad;
+   opacity: 1 !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #adadad;
+   opacity: 1 !important; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #adadad;  
+   opacity: 1 !important; 
+}
+
+:-ms-input-placeholder {  
+   color: #adadad;  
+   opacity: 1 !important; 
+}
 
 
 /*
@@ -292,9 +321,6 @@ table tr:first-of-type .ranknum {
 */
 
 @media screen and (max-width: 767px) {
-	.collapsible {
-		display: none;
-	}
 	
 /*
 	.navbar-header {
@@ -305,6 +331,14 @@ table tr:first-of-type .ranknum {
 		justify-content: space-around;
 	}
 */
+	.navbar {
+		line-height: normal;
+	}
+
+	.navlogo {
+		display: block;
+	}
+	
 	.navbar-header {
 	    text-align: justify;
 	    min-width: 320px;
@@ -318,11 +352,6 @@ table tr:first-of-type .ranknum {
 	    display: inline-block;
 	}
 	
-	.navlogo {
-		width: 100px;
-		width: 75px;
-	}
-	
 	.navlogo h1 {
 		text-align: center;
 		float: none;
@@ -333,11 +362,72 @@ table tr:first-of-type .ranknum {
 		display: block;
 		width: 75px;
 		height: 75px;
+		background: none;
+		border: none;
+		font-size: 1.2em;
+		color: #fff;
 	}
 	
 	.navtoggle {
 		display: block;
 		width: 75px;
 		height: 75px;
+		background: none;
+		border: none;
+		font-size: 1.2em;
+		color: #fff;
+	}
+	
+	#collapsible {
+		list-style-type: none;
+		margin: 0;
+		width: 100%;
+		height: 350px;
+		position: relative;
+		display: none;
+	}
+	
+	.navitem {
+		width: 100%;
+		height: 70px;
+		line-height: 70px;
+		font-weight: 500;
+		font-size: 18pt;
+		text-align: center;
+	}
+	
+	.navitem:nth-of-type(1) {
+		background: #CA85FF;
+	}
+	
+	.navitem:nth-of-type(2) {
+		background: #A04AE2;
+	}
+	
+	.navitem:nth-of-type(3) {
+		background: #7437A2;
+	}
+	
+	.navitem:nth-of-type(4) {
+		background: #582A7B;
+	}
+	
+	.navitem:nth-of-type(5) {
+		background: #381851;
+	}
+	
+	.navlink {
+		color: white;
+		text-decoration: none;
+		letter-spacing: 4.5px;
+		display: flex;
+		flex-grow: 1;
+		flex-shrink: 1;
+		justify-content: center;
+	}
+	
+	.navlink:hover {
+		background: rgba(0, 0, 0, 0.5);
+		width: 100%;
 	}
 }

@@ -23,19 +23,24 @@
 	<div class="wrapper-fluid">	
 		<nav class="navbar">
 			<div class="navbar-header collapsed">
-				<div class="navbar-item"><button type="button" class="navsearch" href="#"><i class="fa fa-search"></i></button></div>
+				<div class="navbar-item"><button type="button" class="navsearch"><i class="fa fa-search"></i></button></div>
 				<div class="navbar-item"><a class="navlogo" href="/"><h1>ender<span>list</span></h1></a></div>
 				<div class="navbar-item"><button type="button" class="navtoggle"><i class="fa fa-bars"></i></button></div>
 			</div>	
 
-			<ul class="collapsible">
+			<ul id="collapsible">
 				<li class="navitem"><a class="navlink" href="/dashboard">Dashboard</a></li>
 				<li class="navitem"><a class="navlink" href="/sponsored">Sponsored</a></li>
 				<li class="navitem"><a class="navlink" href="/login">Login</a></li>
 				<li class="navitem"><a class="navlink" href="/register">Register</a></li>
-				<li class="navitem"><a class="navlink" href="/search"><i class="fa fa-search"></i></a></li>
+				<li class="navitem"><a class="navlink" href="/settings">Settings</a></li>
 			</ul>
 		</nav>
+		
+		<form method="get" action="" id="search">
+			<input type="text" class="searchbar" placeholder="Search Enderlist...">
+			<input type="submit" class="hidden">
+		</form>
 	</div>
 	
 	@show

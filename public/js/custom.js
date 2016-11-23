@@ -5,6 +5,22 @@ $(document).ready(function() {
 		var v = true;
 		$('#add-server fieldset').prop('disabled', function(i, v) { return !v; });
 	});
+	
+	$(".navtoggle").on("click", function() {
+		collapsible("collapsible");
+	});
+	
+	$(".navsearch").on("click", function(e) 
+	{
+
+		// Toggle search
+		$("#search").slideToggle(500, function()
+		{
+			// Focus on the search bar
+			// When animation is complete
+			$(".searchbar").focus();	
+		});
+	});
 });
 
 function collapsible(zap) {
