@@ -10,6 +10,8 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href='{{ asset("css/reset.css") }}'>
 	<link rel='stylesheet' href='{{ asset("css/animate.min.css") }}'>
+	<link rel='stylesheet' href='{{ asset("css/col.css") }}'>
+	<link rel='stylesheet' href='{{ asset("css/2cols.css") }}'>
 	<link rel="stylesheet" href='{{ asset("css/styles.css") }}'>
 	
 	<!-- Scripts -->
@@ -34,6 +36,7 @@
 				<li class="navitem"><a class="navlink" href="/login">Login</a></li>
 				<li class="navitem"><a class="navlink" href="/register">Register</a></li>
 				<li class="navitem"><a class="navlink" href="/settings">Settings</a></li>
+				<li class="navitem hidden-on-mobile"><a class="navlink" href="#">Search</a></li>
 			</ul>
 		</nav>
 		

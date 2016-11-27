@@ -50,6 +50,7 @@ Route::post('/reset', 'ResetPWController@reset')->name('reset');
 
 Route::group(['middleware' => ['web']], function () {
 	
+	Route::auth();
 	Route::get('/home', 'HomeController@index');
 	
 	Route::get('/add-server', function() {

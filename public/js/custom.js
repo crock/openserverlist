@@ -12,7 +12,17 @@ $(document).ready(function() {
 	
 	$(".navsearch").on("click", function(e) 
 	{
-
+		// Toggle search
+		$("#search").slideToggle(500, function()
+		{
+			// Focus on the search bar
+			// When animation is complete
+			$(".searchbar").focus();	
+		});
+	});
+	
+	$(".navitem:last-of-type .navlink").on("click", function(e) 
+	{
 		// Toggle search
 		$("#search").slideToggle(500, function()
 		{

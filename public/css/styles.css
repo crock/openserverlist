@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:400');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
 
 /*
 +------------------------------------+
-|                                    |
-|           General Styles           |
-|                                    |
+|									 |
+|			General Styles			 |
+|									 |
 +------------------------------------+
 */
 
@@ -35,8 +34,7 @@ a:hover {
 }
 
 .section h1 {
-	font-size: 2em;
-	font-family: 'Oswald', sans-serif;
+	font-size: 1.5em;
 	font-weight: 400;
 	color: #000;
 	text-align: left;
@@ -54,9 +52,9 @@ a:hover {
 
 /*
 +------------------------------------+
-|                                    |
-|             Navigation             |
-|                                    |
+|									 |
+|			  Navigation			 |
+|									 |
 +------------------------------------+
 */
 
@@ -120,9 +118,9 @@ a {
 
 /*
 +------------------------------------+
-|                                    |
-|           Search Bar               |
-|                                    |
+|									 |
+|			Search Bar				 |
+|									 |
 +------------------------------------+
 */
 
@@ -149,32 +147,70 @@ a {
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #adadad;  
+   color: #adadad;	
    opacity: 1 !important; 
 }
 
 :-ms-input-placeholder {  
-   color: #adadad;  
+   color: #adadad;	
    opacity: 1 !important; 
 }
 
 
 /*
 +------------------------------------+
-|                                    |
-|           Form Styles              |
-|                                    |
+|									 |
+|			Form Styles				 |
+|									 |
 +------------------------------------+
 */
+
+input[type="text"] {
+	display: block;
+	margin: 0;
+	width: 100%;
+	font-family: sans-serif;
+	font-size: 18px;
+	appearance: none;
+	box-shadow: none;
+	border-radius: none;
+}
+
+input[type="text"]:focus {
+	outline: none;
+}
+
+input[type="text"] {
+	padding: 10px;
+	border: none;
+	border-bottom: solid 2px #c9c9c9;
+	transition: border 0.3s;
+}
+input[type="text"]:focus,
+input[type="text"].focus {
+	border-bottom: solid 2px #969696;
+}
+
+.form-group {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.form-group label {
+	font-size: 0.8em;
+	color: #adadad;
+}
 
 
 
 
 /*
 +------------------------------------+
-|                                    |
-|       Server List Styles           |
-|                                    |
+|									 |
+|		Server List Styles			 |
+|									 |
 +------------------------------------+
 */
 
@@ -303,9 +339,9 @@ table tr:first-of-type .ranknum {
 
 /*
 +------------------------------------+
-|                                    |
-|           Footer Styles            |
-|                                    |
+|									 |
+|			Footer Styles			 |
+|									 |
 +------------------------------------+
 */
 
@@ -314,9 +350,9 @@ table tr:first-of-type .ranknum {
 
 /*
 +------------------------------------+
-|                                    |
-|           Responsive               |
-|                                    |
+|									 |
+|			Responsive				 |
+|									 |
 +------------------------------------+
 */
 
@@ -331,6 +367,10 @@ table tr:first-of-type .ranknum {
 		justify-content: space-around;
 	}
 */
+	.hidden-on-mobile {
+		display: none;
+	}
+
 	.navbar {
 		line-height: normal;
 	}
@@ -340,16 +380,16 @@ table tr:first-of-type .ranknum {
 	}
 	
 	.navbar-header {
-	    text-align: justify;
-	    min-width: 320px;
+		 text-align: justify;
+		 min-width: 320px;
 	}
 	.navbar-header:after {
-	    content: '';
-	    display: inline-block;
-	    width: 100%;
+		 content: '';
+		 display: inline-block;
+		 width: 100%;
 	}
 	.navbar-item {
-	    display: inline-block;
+		 display: inline-block;
 	}
 	
 	.navlogo h1 {
