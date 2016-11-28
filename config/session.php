@@ -135,7 +135,7 @@ return [
     |
     */
 
-    'domain' => 'laravel52-croc.codeanyapp.com',
+    'domain' => 'enderlist.app',
 
     /*
     |--------------------------------------------------------------------------
