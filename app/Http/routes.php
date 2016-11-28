@@ -17,6 +17,7 @@ Route::get('/', function() {
 
 Route::get('server/{id}', 'ServerController@getServerInfo');
 
+/*
 Route::get('/login', function() {
 	return view('login');
 });
@@ -35,6 +36,7 @@ Route::get('/reset-password/{token}', function() {
 	return view('reset-password', ['token' => 'token']);
 })->name('reset-password');
 Route::post('/reset', 'ResetPWController@reset')->name('reset');
+*/
 
 
 /*
