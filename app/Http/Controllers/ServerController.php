@@ -30,7 +30,7 @@ class ServerController extends Controller
 		$server->sport = $port;
 		$server->sdesc = $desc;
 		$server->active = 0;
-		$server->hash = md5($name);
+		$server->hash = uniqid("EL_".md5($name), true);
 		$server->votifier = $votifier;
 		$server->vport = $vport;
 		$server->vpubkey = $vpubkey;
@@ -71,7 +71,15 @@ class ServerController extends Controller
 		return $result;
 	}
 	
-	public function getServerInfo() {
+	public function editServer($id) {
+		
+	}
+	
+	public function deleteServer($id) {
+		
+	}
+	
+	public function getServerInfo($id) {
 		return view('server');
 	}
 }

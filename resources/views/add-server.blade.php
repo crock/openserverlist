@@ -12,6 +12,7 @@
 		<h1>Add Server</h1>
 	</div>
 	<form id="add-server" method="post" action="{{ route('add-server') }}">
+		<input type="hidden" name="_token" value="{{ Session::token() }}">
 		<div class="form-group">
 			<label for="sname">Server Name</label>
 			<input class="form-control" type="text" id="sname" name="sname" placeholder="Server Name" length="20">
@@ -29,7 +30,7 @@
 		
 		<div class="form-group">
 			<label for="sdesc">Server Description</label>
-			<textarea class="form-control" id="sdesc" name="sdesc" placeholder="Write a eye-catching description of your server here to attract many players!" length="5000"></textarea>
+			<textarea class="form-control" id="sdesc" name="sdesc" rows="10" placeholder="Write a eye-catching description of your server here to attract many players!" length="5000"></textarea>
 		</div>
 
 		<div class="form-group">
@@ -55,6 +56,5 @@
 		<button class="btn btn-success" type="submit" name="action">Submit
 			<i class="fa fa-send"></i>
 		</button>
-		<input type="hidden" name="_token" value="{{ Session::token() }}">
 	</form>
 @endsection

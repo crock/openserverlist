@@ -15,11 +15,15 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('server/{id}', 'ServerController@getServerInfo');
-
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index');
+Route::get('/dashboard', 'HomeController@dash');
+
+Route::get('/server/{id}', [
+	'uses' => 'ServerController@getServerInfo',
+	'as' => 'info'
+]);
 
 Route::get('/add-server', function() {
 	return view('add-server');
@@ -30,14 +34,19 @@ Route::post('/add-server', [
 	'as' => 'add-server'
 ]);
 
-Route::get('/dashboard', [
-	'uses' => 'UserController@getDashboard',
-	'as' => 'dashboard'
-]);
-
 Route::post('/verify-server/{id}', [
 	'uses' => 'ServerController@verifyServer',
 	'as' => 'verify'
+]);
+
+Route::post('/edit-server/{id}', [
+	'uses' => 'ServerController@editServer',
+	'as' => 'edit'
+]);
+
+Route::post('/delete-server/{id}', [
+	'uses' => 'ServerController@deleteServer',
+	'as' => 'delete'
 ]);
 
 Route::post('/vote/{username}', [

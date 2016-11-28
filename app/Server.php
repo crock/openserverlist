@@ -1,17 +1,18 @@
 <?php
+
 namespace Enderlist;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-class User extends Authenticatable
+
+use Illuminate\Database\Eloquent\Model;
+
+class Server extends Model
 {
-    use Notifiable;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password',
+        'sname', 'sip', 'sport', 'sdesc', 'active', 'ownerID', 'likes', 'votifier', 'vport', 'sbanner',
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -19,6 +20,6 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'hash', 'vpubkey',
     ];
 }
