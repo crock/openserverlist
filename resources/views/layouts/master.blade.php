@@ -34,9 +34,32 @@
 			<ul id="collapsible">
 				<li class="navitem"><a class="navlink" href="/dashboard">Dashboard</a></li>
 				<li class="navitem"><a class="navlink" href="/sponsored">Sponsored</a></li>
-				<li class="navitem"><a class="navlink" href="/login">Login</a></li>
-				<li class="navitem"><a class="navlink" href="/register">Register</a></li>
-				<li class="navitem"><a class="navlink" href="/settings">Settings</a></li>
+				@if (Auth::guest())	
+					<li class="navitem hidden-on-desktop"><a class="navlink" href="/login">Login</a></li>
+					<li class="navitem hidden-on-desktop"><a class="navlink" href="/register">Register</a></li>
+				@else
+					<li class="navitem hidden-on-desktop"><a class="navlink" href="/settings">Settings</a></li>
+					<li class="navitem hidden-on-desktop"><a class="navlink" href="/logout">Logout</a></li>
+				@endif
+				<li class="navitem hidden-on-mobile">
+					<a id="userMenu" class="navlink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					@if (Auth::guest())
+						User <span class="caret"></span>
+					@else
+						{{ Auth::user()->username }} <span class="caret"></span>
+					@endif
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="userMenu">
+						@if (Auth::guest())
+	                        <li><a href="{{ url('/login') }}">Login</a></li>
+	                        <li><a href="{{ url('/register') }}">Register</a></li>
+	                    @else
+	                        <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+	                        <li role="separator" class="divider"></li>
+	                        <li><a href="/settings">Settings</a></li>
+	                    @endif
+					</ul>
+				</li>
 				<li class="navitem hidden-on-mobile"><a class="navlink" href="#">Search</a></li>
 			</ul>
 		</nav>
