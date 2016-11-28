@@ -11,12 +11,12 @@
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href='{{ asset("css/reset.css") }}'>
 	<link rel='stylesheet' href='{{ asset("css/animate.min.css") }}'>
-	<link rel='stylesheet' href='{{ asset("css/col.css") }}'>
-	<link rel='stylesheet' href='{{ asset("css/2cols.css") }}'>
+	<link rel='stylesheet' href='{{ asset("css/bootstrap.min.css") }}'>
 	<link rel="stylesheet" href='{{ asset("css/styles.css") }}'>
 	
 	<!-- Scripts -->
 	<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+	<script src='js/bootstrap.min.js'></script>
 	<script src="https://use.fontawesome.com/5f7fa28864.js"></script>
 	<script src='{{ asset("js/custom.js") }}'></script>
 </head>

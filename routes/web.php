@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('server/{id}', 'ServerController@getServerInfo');
 
 Auth::routes();
+Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index');
 
 Route::get('/add-server', function() {

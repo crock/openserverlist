@@ -60,9 +60,9 @@ a:hover {
 
 .navbar {
 	width: 100%;
-	height: 75px;
 	line-height: 75px;
 	background: #8d21c7;
+	margin-bottom: 0;
 /*
 	background: -webkit-linear-gradient(#a549ff 0%, #450073 100%);
 	background: -o-linear-gradient(#a549ff 0%, #450073 100%);
@@ -156,6 +156,14 @@ a {
    opacity: 1 !important; 
 }
 
+input, select, textarea{
+    color: #333;
+}
+
+textarea:focus, input:focus {
+    color: #000;
+}
+
 
 /*
 +------------------------------------+
@@ -165,45 +173,26 @@ a {
 +------------------------------------+
 */
 
-input[type="text"] {
-	display: block;
-	margin: 0;
-	width: 100%;
-	font-family: sans-serif;
-	font-size: 18px;
-	appearance: none;
-	box-shadow: none;
-	border-radius: none;
+.checkbox label,
+.control-label {
+	color: #6b6b6b;
 }
 
-input[type="text"]:focus {
-	outline: none;
+.checkbox label {
+	font-size: 0.6em;
 }
 
-input[type="text"] {
-	padding: 10px;
+.panel-default > .panel-heading {
 	border: none;
-	border-bottom: solid 2px #c9c9c9;
-	transition: border 0.3s;
-}
-input[type="text"]:focus,
-input[type="text"].focus {
-	border-bottom: solid 2px #969696;
+	background-color: rgba(28, 28, 28, 1);
+	color: #fff;
 }
 
-.form-group {
-	display: block;
-	width: 80%;
-	margin: 0 auto;
-	padding: 10px;
+.panel,
+.panel-default {
+	border: none;
+	background-color: rgba(62, 62, 62, 1);
 }
-
-.form-group label {
-	font-size: 0.8em;
-	color: #adadad;
-}
-
-
 
 
 /*
