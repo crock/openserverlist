@@ -53,6 +53,15 @@ a:hover {
 	text-align: left;
 }
 
+.dashContent {
+	width: 468px;
+	margin: 0 auto;
+}
+
+#add-server-btn {
+	margin: 50px 0 25px;
+}
+
 
 /*
 +------------------------------------+
@@ -204,6 +213,32 @@ textarea:focus, input:focus {
 	background-color: rgba(62, 62, 62, 1);
 }
 
+/*
++------------------------------------+
+|									 |
+|			Dashboard Styles	     |
+|									 |
++------------------------------------+
+*/
+
+#server-info {
+	border: none;
+	margin-top: 50px;
+}
+
+#server-info thead {
+	background: #8d21c7;
+	font-weight: 300;
+	text-align: center;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background: #1e1e1e;
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+	background: #4f4f4f;
+}
 
 /*
 +------------------------------------+
@@ -232,7 +267,7 @@ textarea:focus, input:focus {
 }
 
 .push li label {
-	background: url(http://minecraftservers.org/banners/2987811475470590.gif);
+	background: url(http://placehold.it/468x60);
 	width: 468px;
 	height: 60px;
 	display: inline-block;
@@ -298,26 +333,26 @@ a.rm:hover {
 	transition: all .4s ease;
 }
 
-table {
+#server-list {
 	width: 468px;
 	height: 90px;
 	font-size: 18px;
 	margin: 25px auto 100px auto;
 }
 
-table tr:first-of-type td {
+#server-list tr:first-of-type td {
 	background: #000;
 	border: 1px solid #fff;
 	color: #fff;
 	vertical-align: middle;
 	height: 30px;
 }
-table tr:last-of-type td {
+#server-list tr:last-of-type td {
 	border: 1px solid #fff;
 	height: 60px;
 }
 
-table tr:first-of-type .ranknum {
+#server-list tr:first-of-type .ranknum {
 	text-align: center;
 	background: #333;
 }

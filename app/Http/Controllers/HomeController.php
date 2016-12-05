@@ -2,8 +2,10 @@
 
 namespace Enderlist\Http\Controllers;
 
-use Enderlist\User;
+use DB;
 use Enderlist\Server;
+use Enderlist\User;
+use Enderlist\Http\Controllers\Auth;
 use Enderlist\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -24,9 +26,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+	    $servers = DB::table('servers')->where('active', '=', 1)->get();
+        return view('home')->with('servers', $servers);
     }
     
     /**
@@ -34,8 +37,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function dash()
+    public function dash(Request $request)
     {
-        return view('dashboard');
+	    $user = $request->user()->id;
+	    $servers = DB::table('servers')->where('ownerID', '=', $user)->get();
+        return view('dashboard')->with('servers', $servers);
     }
 }
