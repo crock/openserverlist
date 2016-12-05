@@ -23,6 +23,7 @@ class ServerController extends Controller
 		$votifier = $request['votifier'];
 		$vport = $request['vport'];
 		$vpubkey = $request['vpubkey'];
+		$owner = $request['ownerID'];
 		
 		$server = new Server();
 		$server->sname = $name;
@@ -34,9 +35,10 @@ class ServerController extends Controller
 		$server->votifier = $votifier;
 		$server->vport = $vport;
 		$server->vpubkey = $vpubkey;
+		$server->ownerID = $owner;
 		
 		$server->save();
-		return redirect()->route('dashboard');
+		return redirect()->back();
 	}
 	
 	protected $result = "false";
@@ -80,6 +82,28 @@ class ServerController extends Controller
 	}
 	
 	public function getServerInfo($id) {
-		return view('server');
+		$server = DB::table('servers')->where('id', '=', $id)->get()->first();;
+		$info = array();
+		
+		try
+		{
+			$ip = $server->sip;
+			$port = $server->sport;
+			
+			$Query = new MinecraftPing( $ip, $port );
+			$info = $Query->Query();
+		}
+		catch( MinecraftPingException $e )
+		{
+			echo $e->getMessage();
+		}
+/*
+		finally
+		{
+			$Query->Close();
+		}
+		
+*/
+		return view('server')->with(array('server'=>$server,'info'=>$info));
 	}
 }
