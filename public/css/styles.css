@@ -226,6 +226,10 @@ textarea:focus, input:focus {
 	margin-top: 50px;
 }
 
+#secondary-info {
+	margin-top: 50px;
+}
+
 #server-info thead {
 	background: #8d21c7;
 	font-weight: 300;

@@ -18,6 +18,7 @@
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script src="https://use.fontawesome.com/5f7fa28864.js"></script>
 	<script src="{{ asset('js/clipboard.min.js') }}"></script>
+	<script src="{{ asset('js/MinecraftColorCodes.min.3.7.js') }}"></script>
 	<script src="{{ asset('js/custom.js') }}"></script>
 </head>
 
