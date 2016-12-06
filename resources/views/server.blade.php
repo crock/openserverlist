@@ -18,7 +18,7 @@
 				<tbody>
 					<tr>
 						<td>Status</td>
-						<td>Online</td>
+						<td class="{{ ($info) ? "online" : "offline" }}">{{ ($info) ? "Online" : "Offline" }}</td>
 					</tr>
 					<tr>
 						<td>IP</td>
@@ -30,11 +30,11 @@
 					</tr>
 					<tr>
 						<td>Players</td>
-						<td>{{ $info['players']['online'] }}/{{ $info['players']['max'] }}</td>
+						<td class="{{ ($info) ? "" : "faded" }}">{{ ($info) ? $info['players']['online']."/".$info['players']['max'] : "No Connection" }}</td>
 					</tr>
 					<tr>
 						<td>Version</td>
-						<td>{{ $info['version']['name'] }}</td>
+						<td class="{{ ($info) ? "" : "faded" }}">{{ ($info) ? $info['version']['name'] : "No Connection" }}</td>
 					</tr>
 					<tr>
 						<td>Country</td>
@@ -50,7 +50,7 @@
 					</tr>
 					<tr>
 						<td>Website</td>
-						<td><a href="#"><i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+						<td><a href="#"><i class="fa fa-external-link" aria-hidden="true"></i> Visit Site</a></td>
 					</tr>
 					<tr>
 						<td>Owner</td>

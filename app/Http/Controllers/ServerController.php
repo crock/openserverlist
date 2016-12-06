@@ -83,25 +83,30 @@ class ServerController extends Controller
 	
 	public function getServerInfo($id) {
 		$server = DB::table('servers')->where('id', '=', $id)->get()->first();;
-		$info = array();
+		$info;
+		$ip = $server->sip;
+		$port = $server->sport;
 		
-		try
-		{
-			$ip = $server->sip;
-			$port = $server->sport;
-			
-			$Query = new MinecraftPing( $ip, $port );
-			$info = $Query->Query();
-		}
-		catch( MinecraftPingException $e )
-		{
-			echo $e->getMessage();
-		}
-		finally
-		{
-			$Query->Close();
+		$url = "http://mcapi.us/server/status?ip=$ip&port=$port";
+		$content = file_get_contents($url);
+		$json_a = json_decode($content, true);
+		
+		if ($json_a['online'] == false) {
+			$info = false;
+		} else {
+			try {
+				$Query = new MinecraftPing( $ip, $port );
+				$info = $Query->Query();
+			}
+			catch( MinecraftPingException $e ) {
+				echo $e->getMessage();
+			}
+			finally {
+				$Query->Close();
+			}
 		}
 		
+				
 		return view('server')->with(array('server'=>$server,'info'=>$info));
 	}
 }
