@@ -97,13 +97,11 @@ class ServerController extends Controller
 		{
 			echo $e->getMessage();
 		}
-/*
 		finally
 		{
 			$Query->Close();
 		}
 		
-*/
 		return view('server')->with(array('server'=>$server,'info'=>$info));
 	}
 }
