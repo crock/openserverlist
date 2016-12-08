@@ -10,7 +10,8 @@
         "phpseclib/phpseclib": "~0.3.10",
         "xpaw/php-minecraft-query": "^1.0",
 		"laravelcollective/html": "~5.0",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "rtconner/laravel-tagging": "~2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

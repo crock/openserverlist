@@ -156,6 +156,7 @@ return [
         Enderlist\Providers\EventServiceProvider::class,
         Enderlist\Providers\RouteServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
+		\Conner\Tagging\Providers\TaggingServiceProvider::class,
 
     ],
 

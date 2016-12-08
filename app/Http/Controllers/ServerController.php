@@ -25,6 +25,9 @@ class ServerController extends Controller
 		$vpubkey = $request['vpubkey'];
 		$owner = $request['ownerID'];
 		
+		$link = Server::create([]);
+		$link->tag(explode(',', $request->tags));
+		
 		$server = new Server();
 		$server->sname = $name;
 		$server->sip = $ip;
@@ -87,6 +90,8 @@ class ServerController extends Controller
 		$ip = $server->sip;
 		$port = $server->sport;
 		
+		$tags = Server::existingTags()->pluck('name');
+		
 		$url = "http://mcapi.us/server/status?ip=$ip&port=$port";
 		$content = file_get_contents($url);
 		$json_a = json_decode($content, true);
@@ -107,6 +112,6 @@ class ServerController extends Controller
 		}
 		
 				
-		return view('server')->with(array('server'=>$server,'info'=>$info));
+		return view('server')->with(array('server'=>$server,'info'=>$info,'tags'=>$tags));
 	}
 }

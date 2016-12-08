@@ -33,6 +33,11 @@
 			<label for="sdesc">Server Description</label>
 			<textarea class="form-control" id="sdesc" name="sdesc" rows="10" placeholder="Write a eye-catching description of your server here to attract many players!" length="5000"></textarea>
 		</div>
+		
+		<div class="form-group">
+			<label for="tags">Tags</label>
+			<input class="form-control" type="text" id="tags" name="tags" placeholder="Tags">
+		</div>
 
 		<div class="form-group">
 			<label>Upload Banner</label>
