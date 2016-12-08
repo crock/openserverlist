@@ -9,17 +9,14 @@
 	<title>Enderlist - @yield('title')</title>
 	
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="{{ asset('css/reset.css') }}" />
-	<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-	<link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+	
+	<link rel="stylesheet" href="{{ asset('css/app.css') }}" />
 	
 	<!-- Scripts -->
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script src="https://use.fontawesome.com/5f7fa28864.js"></script>
 	<script src="{{ asset('js/clipboard.min.js') }}"></script>
 	<script src="{{ asset('js/MinecraftColorCodes.min.3.7.js') }}"></script>
-	<script src="{{ asset('js/custom.js') }}"></script>
+	<script src="{{ asset('js/app.js') }}"></script>
 </head>
 
 <body>

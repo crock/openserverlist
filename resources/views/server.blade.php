@@ -59,8 +59,13 @@
 					<tr>
 						<td>Tags</td>
 						<td>
-							<span>pvp</span>
-							<span>factions</span>
+							<script>
+							var tags = [
+							    @foreach ($tags as $tag)
+							    {tag: "{{$tag}}" },
+							    @endforeach
+							];
+							</script>
 						</td>
 					</tr>
 				</tbody>
