@@ -1,6 +1,6 @@
 <?php
 
-namespace Enderlist\Http\Middleware;
+namespace Shulkerlist\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

@@ -151,13 +151,11 @@ return [
         /*
          * Application Service Providers...
          */
-        Enderlist\Providers\AppServiceProvider::class,
-        Enderlist\Providers\AuthServiceProvider::class,
-        Enderlist\Providers\EventServiceProvider::class,
-        Enderlist\Providers\RouteServiceProvider::class,
+        Shulkerlist\Providers\AppServiceProvider::class,
+        Shulkerlist\Providers\AuthServiceProvider::class,
+        Shulkerlist\Providers\EventServiceProvider::class,
+        Shulkerlist\Providers\RouteServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
-		\Conner\Tagging\Providers\TaggingServiceProvider::class,
-
     ],
 
     /*

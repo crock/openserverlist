@@ -1,15 +1,15 @@
 <?php
 
-namespace Enderlist\Http\Controllers;
+namespace Shulkerlist\Http\Controllers;
 
-use Enderlist\Server;
+use Shulkerlist\Server;
 use DB;
 use xPaw\MinecraftPing;
 use xPaw\MinecraftPingException;
 
 use Illuminate\Http\Request;
-use Enderlist\Http\Requests;
-use Enderlist\Http\Controllers\Controller;
+use Shulkerlist\Http\Requests;
+use Shulkerlist\Http\Controllers\Controller;
 
 class ServerController extends Controller
 {

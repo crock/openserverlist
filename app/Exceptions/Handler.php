@@ -1,6 +1,6 @@
 <?php
 
-namespace Enderlist\Exceptions;
+namespace Shulkerlist\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

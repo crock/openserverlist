@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => Enderlist\User::class,
+            'model' => Shulkerlist\User::class,
         ],
 
         // 'users' => [

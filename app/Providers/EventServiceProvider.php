@@ -1,6 +1,6 @@
 <?php
 
-namespace Enderlist\Providers;
+namespace Shulkerlist\Providers;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'Enderlist\Events\SomeEvent' => [
-            'Enderlist\Listeners\EventListener',
+        'Shulkerlist\Events\SomeEvent' => [
+            'Shulkerlist\Listeners\EventListener',
         ],
     ];
 

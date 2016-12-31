@@ -1,7 +1,7 @@
 <?php
-namespace Enderlist\Http\Controllers\Auth;
-use Enderlist\User;
-use Enderlist\Http\Controllers\Controller;
+namespace Shulkerlist\Http\Controllers\Auth;
+use Shulkerlist\User;
+use Shulkerlist\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 class RegisterController extends Controller

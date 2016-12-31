@@ -1,6 +1,6 @@
 <?php
 
-namespace Enderlist\Providers;
+namespace Shulkerlist\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'Enderlist\Model' => 'Enderlist\Policies\ModelPolicy',
+        'Shulkerlist\Model' => 'Shulkerlist\Policies\ModelPolicy',
     ];
 
     /**

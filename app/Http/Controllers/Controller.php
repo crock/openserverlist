@@ -1,6 +1,6 @@
 <?php
 
-namespace Enderlist\Http\Controllers;
+namespace Shulkerlist\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
