@@ -1,5 +1,23 @@
-$(document).ready(function() {
-	var clipboard = new Clipboard('.rm');
+window.$ = window.jQuery = require('jquery')
+require('selectize');
+var bootstrap = require('bootstrap-sass');
+
+$( document ).ready(function() {
+    $('#tags').selectize({
+        delimiter: ',',
+        persist: false,
+        valueField: 'tag',
+        labelField: 'tag',
+        searchField: 'tag',
+        options: tags,
+        create: function(input) {
+            return {
+                tag: input
+            }
+        }
+    });
+    
+    var clipboard = new Clipboard('.rm');
 	
 		clipboard.on('success', function(e) {
 	    console.info('Action:', e.action);

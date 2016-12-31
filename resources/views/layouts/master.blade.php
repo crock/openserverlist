@@ -9,16 +9,14 @@
 	<title>Enderlist - @yield('title')</title>
 	
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href='{{ asset("css/reset.css") }}'>
-	<link rel='stylesheet' href='{{ asset("css/animate.min.css") }}'>
-	<link rel='stylesheet' href='{{ asset("css/bootstrap.min.css") }}'>
-	<link rel="stylesheet" href='{{ asset("css/styles.css") }}'>
+	
+	<link rel="stylesheet" href="{{ asset('css/app.css') }}" />
 	
 	<!-- Scripts -->
-	<script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-	<script src='js/bootstrap.min.js'></script>
 	<script src="https://use.fontawesome.com/5f7fa28864.js"></script>
-	<script src='{{ asset("js/custom.js") }}'></script>
+	<script src="{{ asset('js/clipboard.min.js') }}"></script>
+	<script src="{{ asset('js/MinecraftColorCodes.min.3.7.js') }}"></script>
+	<script src="{{ asset('js/app.js') }}"></script>
 </head>
 
 <body>
@@ -32,7 +30,9 @@
 			</div>	
 
 			<ul id="collapsible">
-				<li class="navitem"><a class="navlink" href="/dashboard">Dashboard</a></li>
+				@if (Auth::user())	
+					<li class="navitem"><a class="navlink" href="/dashboard">Dashboard</a></li>
+				@endif
 				<li class="navitem"><a class="navlink" href="/sponsored">Sponsored</a></li>
 				@if (Auth::guest())	
 					<li class="navitem hidden-on-desktop"><a class="navlink" href="/login">Login</a></li>

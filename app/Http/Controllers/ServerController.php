@@ -23,6 +23,10 @@ class ServerController extends Controller
 		$votifier = $request['votifier'];
 		$vport = $request['vport'];
 		$vpubkey = $request['vpubkey'];
+		$owner = $request['ownerID'];
+		
+		$link = Server::create([]);
+		$link->tag(explode(',', $request->tags));
 		
 		$server = new Server();
 		$server->sname = $name;
@@ -34,9 +38,10 @@ class ServerController extends Controller
 		$server->votifier = $votifier;
 		$server->vport = $vport;
 		$server->vpubkey = $vpubkey;
+		$server->ownerID = $owner;
 		
 		$server->save();
-		return redirect()->route('dashboard');
+		return redirect()->back();
 	}
 	
 	protected $result = "false";
@@ -80,6 +85,33 @@ class ServerController extends Controller
 	}
 	
 	public function getServerInfo($id) {
-		return view('server');
+		$server = DB::table('servers')->where('id', '=', $id)->get()->first();;
+		$info;
+		$ip = $server->sip;
+		$port = $server->sport;
+		
+		$tags = Server::existingTags()->pluck('name');
+		
+		$url = "http://mcapi.us/server/status?ip=$ip&port=$port";
+		$content = file_get_contents($url);
+		$json_a = json_decode($content, true);
+		
+		if ($json_a['online'] == false) {
+			$info = false;
+		} else {
+			try {
+				$Query = new MinecraftPing( $ip, $port );
+				$info = $Query->Query();
+			}
+			catch( MinecraftPingException $e ) {
+				echo $e->getMessage();
+			}
+			finally {
+				$Query->Close();
+			}
+		}
+		
+				
+		return view('server')->with(array('server'=>$server,'info'=>$info,'tags'=>$tags));
 	}
 }
