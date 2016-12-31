@@ -1,13 +1,13 @@
 <?php
 
-namespace Enderlist;
+namespace Shulkerlist;
 
 use Illuminate\Database\Eloquent\Model;
-use \Conner\Tagging\Taggable;
+//use \Conner\Tagging\Taggable;
 
 class Server extends Model
 {
-	use Taggable;
+	//use Taggable;
 	
 	protected $table = 'links';
 	

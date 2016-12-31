@@ -1,6 +1,6 @@
 <?php
-namespace Enderlist\Http\Controllers\Auth;
-use Enderlist\Http\Controllers\Controller;
+namespace Shulkerlist\Http\Controllers\Auth;
+use Shulkerlist\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 class ForgotPasswordController extends Controller
 {

@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 
-	<title>Enderlist - @yield('title')</title>
+	<title>Shulkerlist - @yield('title')</title>
 	
 	<!-- Stylesheets -->
 	
@@ -25,7 +25,7 @@
 		<nav class="navbar">
 			<div class="navbar-header collapsed">
 				<div class="navbar-item"><button type="button" class="navsearch"><i class="fa fa-search"></i></button></div>
-				<div class="navbar-item"><a class="navlogo" href="/"><h1>ender<span>list</span></h1></a></div>
+				<div class="navbar-item"><a class="navlogo" href="/"><h1>shulker<span>list</span></h1></a></div>
 				<div class="navbar-item"><button type="button" class="navtoggle"><i class="fa fa-bars"></i></button></div>
 			</div>	
 
@@ -65,7 +65,7 @@
 		</nav>
 		
 		<form method="get" action="" id="search">
-			<input type="text" class="searchbar" placeholder="Search Enderlist...">
+			<input type="text" class="searchbar" placeholder="Search Shulkerlist...">
 			<input type="submit" class="hidden">
 		</form>
 	</div>

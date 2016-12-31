@@ -1,13 +1,13 @@
 <?php
 
-namespace Enderlist\Http\Controllers;
+namespace Shulkerlist\Http\Controllers;
 
 use Mail;
 use DB;
-use Enderlist\Reset;
-use Enderlist\User;
+use Shulkerlist\Reset;
+use Shulkerlist\User;
 use Illuminate\Http\Request;
-use Enderlist\Http\Requests;
+use Shulkerlist\Http\Requests;
 
 class ResetPWController extends Controller
 {
@@ -28,7 +28,7 @@ class ResetPWController extends Controller
 	}
 	
 	public function resetPassword(Request $request) {
-		//$toChange = Enderlist\User::where('email', $email);
+		//$toChange = Shulkerlist\User::where('email', $email);
 		return view('reset-password', ['token' => $request]);
 	}
 	
@@ -42,7 +42,7 @@ class ResetPWController extends Controller
 		$reset->save();
 		
 		Mail::send('emails.reset', ['email' => $request, 'token' => $request['token']], function($message) use ($request) {
-            $message->from('contact@enderlist.com', 'Enderlist');
+            $message->from('contact@enderlist.com', 'Shulkerlist');
             $message->to($request->email)->subject('Password Reset Email');
         });
 		

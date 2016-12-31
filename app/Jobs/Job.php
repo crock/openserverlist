@@ -1,6 +1,6 @@
 <?php
 
-namespace Enderlist\Jobs;
+namespace Shulkerlist\Jobs;
 
 use Illuminate\Bus\Queueable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Enderlist\Providers;
+namespace Shulkerlist\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

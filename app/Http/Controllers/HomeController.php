@@ -1,12 +1,12 @@
 <?php
 
-namespace Enderlist\Http\Controllers;
+namespace Shulkerlist\Http\Controllers;
 
 use DB;
-use Enderlist\Server;
-use Enderlist\User;
-use Enderlist\Http\Controllers\Auth;
-use Enderlist\Http\Requests;
+use Shulkerlist\Server;
+use Shulkerlist\User;
+use Shulkerlist\Http\Controllers\Auth;
+use Shulkerlist\Http\Requests;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
