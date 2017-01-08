@@ -1,6 +1,6 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "node_modules/selectize/dist/css/selectize.bootstrap3";
-@import "https://fonts.googleapis.com/css?family=Roboto:300,400";
+@import "https://fonts.googleapis.com/css?family=Raleway:200";
 
 /*
 +------------------------------------+
@@ -10,20 +10,16 @@
 +------------------------------------+
 */
 
+@keyframes shulkerbox {
+    0%   {top:0px;}
+	50%	 {top:35px;}
+    100% {top:0px;}
+}
+
+html,
 body {
-	background: #222;
-	font-family: 'Roboto', sans-serif;
-	font-size: 14pt;
-	font-weight: 300;
-	color: #fff;
-}
-
-.wrapper-fluid {
-	width: 100%;
-}
-
-.hidden {
-	display: none;
+	font-family: 'Avenir', 'Arial', sans-serif;
+	font-size: 16px;
 }
 
 .swrapper {
@@ -94,63 +90,38 @@ a:hover {
 +------------------------------------+
 */
 
-.navbar {
-	width: 100%;
-	line-height: 75px;
-	background: #8d21c7;
-	margin-bottom: 0;
-	border-radius: 0px;
+nav {
+	background: url(../img/navbg.png);
+	background-repeat: repeat-x !important;
+	border: none !important;
+	border-radius: 0px !important;
+	margin-bottom: 0 !important;
+}
+
+.navbar-inverse .navbar-toggle {
 	border: none;
-	font-weight: 400;
-}
-
-a {
-	text-decoration: none;
 	color: #fff;
+	background: none !important;
+	margin-bottom: 0 !important;
 }
 
-.navlogo h1 {
-	font-size: 1.5em;
-	font-weight: 400;
-	margin-left: 25px;
-	float: left;
+.navbar-brand {
+	letter-spacing: 7px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff !important;
 }
 
-.navlogo h1 span {
-	font-weight: 300;
+.navbar-brand:hover {
+	color: #824DB1 !important;
 }
 
-.navbar ul {
-	float: right;
-	margin-right: 25px;
+.nav-search {
+	top: -2.5px;
 }
 
-.navitem {
-	display: inline-block;
-}
-
-.navlink {
-	display: block;
-	padding: 0 25px;
-	text-decoration: none;
-	color: #fff;
-	font-size: 0.8em;
-}
-
-.navlink:hover {
-	background: rgba(0,0,0,0.5);
-}
-
-.navsearch {
-	display: none;
-}
-
-.navtoggle {
-	display: none;
-}
-
-.dropdown-menu {
-	left: auto;
+.highlight {
+	color: #824DB1 !important;
 }
 
 /*
@@ -160,10 +131,6 @@ a {
 |									 |
 +------------------------------------+
 */
-
-#search {
-	display: none;
-}
 
 .searchbar {
 	position: relative;
@@ -405,6 +372,87 @@ a.rm:hover {
 /*
 +------------------------------------+
 |									 |
+|			Banner Styles			 |
+|									 |
++------------------------------------+
+*/
+
+.banner {
+	background: url(../img/endcityhd.jpg) no-repeat center center;
+	width: 100%;
+	height: 500px;
+}
+
+#shulker {
+	width: 233px;
+	height: 269px;
+	position: relative;
+	margin: 45px auto;
+}
+
+.shulker-core {
+	position: absolute;
+	top: 135px;
+	left: 60px;
+	background: url(../img/shulker-core.PNG) no-repeat;
+	width: 115px;
+	height: 115px;
+	z-index: 1;
+}
+
+.shulker-bottom {
+	position: relative;
+	top: 0;
+	left: 0;
+	background: url(../img/shulker-bottom.PNG) no-repeat;
+	width: 233px;
+	height: 73px;
+	z-index: 2;
+}
+
+.shulker-top {
+	position: relative;
+	top: 0;
+	left: 0;
+	background: url(../img/shulker-top.PNG) no-repeat;
+	width: 233px;
+	height: 198px;
+	z-index: 3;
+	animation-name: shulkerbox;
+    animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+.banner .info h1 {
+	color: #fff;
+	font-size: 3em;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	text-align: center;
+}
+
+.banner .info h2 {
+	color: #fff;
+	font-size: 1.2em;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	text-align: center;
+	letter-spacing: 0.4em;
+}
+
+@media screen and (max-width: 767px) {
+	.banner .info h1 {
+		font-size: 2em;
+	}
+	
+	.banner .info h2 {
+		font-size: 0.8em;
+	}
+}
+
+/*
++------------------------------------+
+|									 |
 |			Footer Styles			 |
 |									 |
 +------------------------------------+
@@ -421,124 +469,5 @@ a.rm:hover {
 +------------------------------------+
 */
 
-@media screen and (max-width: 767px) {
-	
-/*
-	.navbar-header {
-		display: flex;
-	}
-	
-	.flex-item {
-		justify-content: space-around;
-	}
-*/
-	.hidden-on-mobile {
-		display: none;
-	}
 
-	.navbar {
-		line-height: normal;
-	}
-
-	.navlogo {
-		display: block;
-	}
 	
-	.navbar-header {
-		 text-align: justify;
-		 min-width: 320px;
-	}
-	.navbar-header:after {
-		 content: '';
-		 display: inline-block;
-		 width: 100%;
-	}
-	.navbar-item {
-		 display: inline-block;
-	}
-	
-	.navlogo h1 {
-		text-align: center;
-		float: none;
-		margin-left: 0;
-	}
-	
-	.navsearch {
-		display: block;
-		width: 75px;
-		height: 75px;
-		background: none;
-		border: none;
-		font-size: 1.2em;
-		color: #fff;
-	}
-	
-	.navtoggle {
-		display: block;
-		width: 75px;
-		height: 75px;
-		background: none;
-		border: none;
-		font-size: 1.2em;
-		color: #fff;
-	}
-	
-	#collapsible {
-		list-style-type: none;
-		margin: 0;
-		width: 100%;
-		height: 280px;
-		position: relative;
-		display: none;
-	}
-	
-	.navitem {
-		width: 100%;
-		height: 70px;
-		line-height: 70px;
-		font-weight: 500;
-		font-size: 18pt;
-		text-align: center;
-	}
-	
-	.navitem:nth-of-type(1) {
-		background: #CA85FF;
-	}
-	
-	.navitem:nth-of-type(2) {
-		background: #A04AE2;
-	}
-	
-	.navitem:nth-of-type(3) {
-		background: #7437A2;
-	}
-	
-	.navitem:nth-of-type(4) {
-		background: #582A7B;
-	}
-	
-	.navitem:nth-of-type(5) {
-		background: #381851;
-	}
-	
-	.navlink {
-		color: white;
-		text-decoration: none;
-		letter-spacing: 4.5px;
-		display: flex;
-		flex-grow: 1;
-		flex-shrink: 1;
-		justify-content: center;
-	}
-	
-	.navlink:hover {
-		background: rgba(0, 0, 0, 0.5);
-		width: 100%;
-	}
-}
-
-@media screen and (min-width: 768px) {
-	.hidden-on-desktop {
-		display: none;
-	}
-}
