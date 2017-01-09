@@ -23,28 +23,28 @@
 					<td colspan="3">
 						<ul class="push">
 							<li>
-								<label>  
+								<label style="background: url({{ asset("storage/$server->sbanner") }})">  
 									<input type="checkbox" />
 									&nbsp;
 									  <div class="actions">
 									  	<a href="#" class="dashaction">
 											{{ Form::open(['method' => 'GET', 'route' => ['info', $server->id]]) }}
-												<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info</button>
+												<button type="submit" class="btn btn-primary"><i class="fa fa-info" aria-hidden="true"></i> Info</button>
 											{{ Form::close() }}
 										</a>
 										<a href="#" class="dashaction">
 											{{ Form::open(['method' => 'POST', 'route' => ['verify', $server->id]]) }}
-												<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Verify</button>
+												<button type="submit" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Verify</button>
 											{{ Form::close() }}
 										</a>
 										<a href="#" class="dashaction">
 											{{ Form::open(['method' => 'POST', 'route' => ['edit', $server->id]]) }}
-												<button type="submit" class="btn btn-warning"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</button>
+												<button type="submit" class="btn btn-warning"><i class="fa fa-edit" aria-hidden="true"></i> Edit</button>
 											{{ Form::close() }}
 										</a>
 										<a href="#" class="dashaction">
 											{{ Form::open(['method' => 'POST', 'route' => ['delete', $server->id]]) }}
-												<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
+												<button type="submit" class="btn btn-danger"><i class="fa fa-remove" aria-hidden="true"></i> Delete</button>
 											{{ Form::close() }}
 										</a>
 									  </div>
