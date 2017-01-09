@@ -9,32 +9,47 @@ use xPaw\MinecraftPingException;
 
 use Illuminate\Http\Request;
 use Shulkerlist\Http\Requests;
+use Illuminate\Support\Facades\Storage;
 use Shulkerlist\Http\Controllers\Controller;
 
 class ServerController extends Controller
 {
 	
+	/**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+	
     public function addServer(Request $request) {
+	    
 		$name = $request['sname'];
 		$ip = $request['sip'];
 		$port = $request['sport'];
 		$desc = $request['sdesc'];
-		$sbanner = $request['sbanner'];
+		$path = $request->file('sbanner')->store('banners');
 		$votifier = $request['votifier'];
 		$vport = $request['vport'];
 		$vpubkey = $request['vpubkey'];
 		$owner = $request['ownerID'];
+		$tags = $request['tags'];
 		
 		$link = Server::create([]);
-		$link->tag(explode(',', $request->tags));
+		$link->tag(explode(',', $tags));
 		
 		$server = new Server();
 		$server->sname = $name;
 		$server->sip = $ip;
 		$server->sport = $port;
 		$server->sdesc = $desc;
+		$server->sbanner = $path;
 		$server->active = 0;
 		$server->hash = uniqid("EL_".md5($name), true);
+		$server->tags = $tags;
 		$server->votifier = $votifier;
 		$server->vport = $vport;
 		$server->vpubkey = $vpubkey;

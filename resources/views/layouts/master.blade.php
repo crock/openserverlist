@@ -79,5 +79,9 @@
 
 	
 	@yield('content')
+	
+	<div class="container">
+		@yield('servers')
+	</div>
 </body>
 </html>

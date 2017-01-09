@@ -3,13 +3,13 @@
 namespace Shulkerlist;
 
 use Illuminate\Database\Eloquent\Model;
-//use \Conner\Tagging\Taggable;
+use \Conner\Tagging\Taggable;
 
 class Server extends Model
 {
-	//use Taggable;
+	use Taggable;
 	
-	protected $table = 'links';
+	protected $table = 'servers';
 	
     /**
      * The attributes that are mass assignable.
@@ -17,7 +17,7 @@ class Server extends Model
      * @var array
      */
     protected $fillable = [
-        'sname', 'sip', 'sport', 'sdesc', 'active', 'ownerID', 'likes', 'votifier', 'vport', 'sbanner', 'tags',
+        'sname', 'sip', 'sport', 'sdesc', 'active', 'ownerID', 'likes', 'votifier', 'vport', 'sbanner', 'tags', 'country'
     ];
     /**
      * The attributes that should be hidden for arrays.

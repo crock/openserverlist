@@ -26,7 +26,7 @@
 								<label>  
 									<input type="checkbox" />
 									&nbsp;
-									  <nav>
+									  <div class="actions">
 									  	<a href="#" class="dashaction">
 											{{ Form::open(['method' => 'GET', 'route' => ['info', $server->id]]) }}
 												<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Info</button>
@@ -47,7 +47,7 @@
 												<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete</button>
 											{{ Form::close() }}
 										</a>
-									  </nav>
+									  </div>
 								</label>
 							</li>
 						</ul>
