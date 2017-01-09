@@ -6284,13 +6284,14 @@ textarea:focus, input:focus {
 #server-info thead {
   background: #8d21c7;
   font-weight: 300;
-  text-align: center; }
+  text-align: center;
+  color: #fff; }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background: #9c9c9c; }
+  background: #eeeeee; }
 
 .table-striped > tbody > tr:nth-of-type(even) {
-  background: #d2d2d2; }
+  background: #f5f5f5; }
 
 #server-info tbody tr > td:first-of-type {
   font-weight: 400;
@@ -6299,6 +6300,13 @@ textarea:focus, input:focus {
 #home p:last-of-type {
   font-size: 0.8em;
   color: #c4c4c4; }
+
+.tag {
+  background: #7d7d7d;
+  padding: 0 5px;
+  color: #eee;
+  font-size: 0.8em;
+  border-radius: 15px; }
 
 /*
 +------------------------------------+

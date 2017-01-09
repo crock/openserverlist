@@ -50,7 +50,7 @@
 					</tr>
 					<tr>
 						<td>Website</td>
-						<td><a href="#"><i class="fa fa-external-link" aria-hidden="true"></i> Visit Site</a></td>
+						<td><a href="#">Visit Site <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
 					</tr>
 					<tr>
 						<td>Owner</td>
@@ -59,13 +59,9 @@
 					<tr>
 						<td>Tags</td>
 						<td>
-							<script>
-							var tags = [
-							    @foreach ($tags as $tag)
-							    {tag: "{{$tag}}" },
-							    @endforeach
-							];
-							</script>
+						@foreach($tags as $tag)
+							<span class="tag">{{ $tag }}</span>
+						@endforeach
 						</td>
 					</tr>
 				</tbody>
