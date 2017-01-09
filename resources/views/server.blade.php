@@ -54,7 +54,7 @@
 					</tr>
 					<tr>
 						<td>Owner</td>
-						<td>{{ Auth::user()->username }}</td>
+						<td>{{ $user->username }}</td>
 					</tr>
 					<tr>
 						<td>Tags</td>
