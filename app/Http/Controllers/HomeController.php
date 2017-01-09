@@ -18,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['only'=>'dash']);
     }
 
     /**
@@ -42,5 +42,11 @@ class HomeController extends Controller
 	    $user = $request->user()->id;
 	    $servers = DB::table('servers')->where('ownerID', '=', $user)->get();
         return view('dashboard')->with('servers', $servers);
+    }
+    
+    public function setupServerRegPage() {
+	    $country_optons = DB::table('countries')->orderBy('name', 'asc')->lists('name','id');
+
+    	return view('add-server', array('countries' => $country_options));
     }
 }

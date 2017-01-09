@@ -90,15 +90,19 @@ a:hover {
 +------------------------------------+
 */
 
-nav {
-	background: url(../img/navbg.png);
+.navbar {
+	background-image: url(../img/navbg.png) !important;
 	background-repeat: repeat-x !important;
 	border: none !important;
 	border-radius: 0px !important;
 	margin-bottom: 0 !important;
 }
 
-.navbar-inverse .navbar-toggle {
+.navbar-inverse {
+	background: #222;
+}
+
+.navbar-toggle {
 	border: none;
 	color: #fff;
 	background: none !important;
@@ -222,11 +226,11 @@ textarea:focus, input:focus {
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-	background: #1e1e1e;
+	background: #9c9c9c;
 }
 
 .table-striped>tbody>tr:nth-of-type(even) {
-	background: #2e2e2e;
+	background: #d2d2d2;
 }
 
 #server-info tbody tr > td:first-of-type {
@@ -280,7 +284,7 @@ textarea:focus, input:focus {
 	display: none;
 }
 
-.push li nav {
+.push li .actions {
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -289,7 +293,7 @@ textarea:focus, input:focus {
 	font-size: 0;
 }
 
-.push li nav a {
+.push li .actions a {
 	height: 100%;
 	display: inline-block;
 	padding: 0 20px;
@@ -325,8 +329,8 @@ a.rm:hover {
 	color: #fff;
 }
 
-.push li:hover nav,
-.push li input:checked ~ nav {
+.push li:hover .actions,
+.push li input:checked ~ .actions {
 	transform: translatex(0);
 	transition: all .4s ease;
 }

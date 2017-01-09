@@ -22,9 +22,7 @@ Route::get('/server/{id}', [
 	'as' => 'info'
 ]);
 
-Route::get('/add-server', function() {
-	return view('add-server');
-});
+Route::get('/add-server', 'HomeController@setupServerRegPage');
 
 Route::post('/add-server', [
 	'uses' => 'ServerController@addServer',
