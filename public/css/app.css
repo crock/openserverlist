@@ -6308,6 +6308,12 @@ textarea:focus, input:focus {
   font-size: 0.8em;
   border-radius: 15px; }
 
+.online {
+  color: #4faa4b; }
+
+.offline {
+  color: #ad3e3e; }
+
 /*
 +------------------------------------+
 |									 |

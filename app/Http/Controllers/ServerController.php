@@ -22,7 +22,7 @@ class ServerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => ['getServerInfo']]);
     }
 	
     public function addServer(Request $request) {
@@ -100,7 +100,8 @@ class ServerController extends Controller
 	}
 	
 	public function getServerInfo($id) {
-		$server = DB::table('servers')->where('id', '=', $id)->get()->first();;
+		$server = DB::table('servers')->where('id', '=', $id)->get()->first();
+		$user = DB::table('users')->where('id', '=', $server->ownerID)->get()->first();
 		$info;
 		$ip = $server->sip;
 		$port = $server->sport;
@@ -127,6 +128,6 @@ class ServerController extends Controller
 		}
 		
 				
-		return view('server')->with(array('server'=>$server,'info'=>$info,'tags'=>$tags));
+		return view('server')->with(array('server'=>$server,'info'=>$info,'tags'=>$tags,'user'=>$user));
 	}
 }
