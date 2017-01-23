@@ -22,7 +22,7 @@ class ServerController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['getServerInfo']]);
+        $this->middleware('auth', ['except' => array('getServerInfo','viewServerPage','viewServerList')]);
     }
 	
     public function addServer(Request $request) {
@@ -99,6 +99,17 @@ class ServerController extends Controller
 		
 	}
 	
+	public function viewServerPage($id) {
+		$data = $this->getServerInfo($id);
+		return view('server')->with($data);
+	}
+	
+	public function getActiveServers() {
+		$servers = DB::table('servers')->where('active', '=', 1)->get();
+		
+		 return $servers;
+	}
+	
 	public function getServerInfo($id) {
 		$server = DB::table('servers')->where('id', '=', $id)->get()->first();
 		$user = DB::table('users')->where('id', '=', $server->ownerID)->get()->first();
@@ -128,6 +139,7 @@ class ServerController extends Controller
 		}
 		
 				
-		return view('server')->with(array('server'=>$server,'info'=>$info,'tags'=>$tags,'user'=>$user));
+		return array('server'=>$server,'info'=>$info,'tags'=>$tags,'user'=>$user);
 	}
+
 }

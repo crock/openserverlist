@@ -26,7 +26,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
 	    $servers = DB::table('servers')->where('active', '=', 1)->get();
         return view('home')->with('servers', $servers);

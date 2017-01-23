@@ -12,7 +12,8 @@
 			<table id="server-info" class="table table-striped table-condensed">
 				<thead>
 					<tr>
-						<td colspan="2">{{ $server->sname }}</td>
+						<td>{{ $server->sname }}</td>
+						<td><a class="likebtn" href="#"><i class="fa fa-heart-o"></i></a></td>
 					</tr>
 				</thead>
 				<tbody>

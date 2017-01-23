@@ -18,8 +18,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'HomeController@dash');
 
 Route::get('/server/{id}', [
-	'uses' => 'ServerController@getServerInfo',
-	'as' => 'info'
+	'uses' => 'ServerController@viewServerPage',
+	'as' => 'id'
 ]);
 
 Route::get('/add-server', 'HomeController@setupServerRegPage');
