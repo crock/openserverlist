@@ -18,6 +18,7 @@
 	<!-- Scripts -->
 	<script src="{{ asset('js/clipboard.min.js') }}"></script>
 	<script src="{{ asset('js/MinecraftColorCodes.min.3.7.js') }}"></script>
+	<script src="https://mcapi.us/scripts/minecraft.js"></script>
 	<script src="{{ asset('js/app.js') }}"></script>
 </head>
 
