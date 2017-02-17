@@ -1,2 +1,507 @@
-// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "node_modules/selectize/dist/css/selectize.bootstrap3";
+@import "https://fonts.googleapis.com/css?family=Raleway:200";
 
+/*
++------------------------------------+
+|									 |
+|			General Styles			 |
+|									 |
++------------------------------------+
+*/
+
+@keyframes shulkerbox {
+    0% {transform: initial;}
+	50% {
+		transform: translateY(35px);
+		-webkit-transform: translateY(35px);
+		-moz-transform: translateY(35px);
+		-o-transform: translateY(35px);
+	}
+	100% {transform: initial;}
+}
+
+html,
+body {
+	font-family: 'Avenir', 'Arial', sans-serif;
+	font-size: 16px;
+}
+
+.swrapper {
+	width: 468px;
+	margin: 100px auto;
+}
+
+ol, ul {
+	margin-bottom: 0;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+#server-info>tbody>tr>td {
+	border-top: none;
+}
+
+.online {
+	color: #0c530c;
+}
+
+.offline {
+	color: #821616;
+}
+
+.faded {
+	color: #6d6d6d;
+}
+
+.fa-external-link {
+	color: #8d21c7;
+}
+
+.section h1 {
+	font-size: 1.5em;
+	font-weight: 400;
+	color: #000;
+	text-align: left;
+	color: #fff;
+}
+
+.section h3 {
+	font-size: 1.3em;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	color: #fff;
+	text-align: left;
+}
+
+.dashContent {
+	width: 468px;
+	margin: 0 auto;
+}
+
+#add-server-btn {
+	margin: 50px 0 25px;
+}
+
+
+/*
++------------------------------------+
+|									 |
+|			  Navigation			 |
+|									 |
++------------------------------------+
+*/
+
+.navbar {
+	background-image: url(../img/navbg.png) !important;
+	background-repeat: repeat-x !important;
+	border: none !important;
+	border-radius: 0px !important;
+	margin-bottom: 0 !important;
+}
+
+.navbar-inverse {
+	background: #222;
+}
+
+.navbar-toggle {
+	border: none;
+	color: #fff;
+	background: none !important;
+	margin-bottom: 0 !important;
+}
+
+.navbar-brand {
+	letter-spacing: 7px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff !important;
+}
+
+.navbar-brand:hover {
+	color: #824DB1 !important;
+}
+
+.nav-search {
+	top: -2.5px;
+}
+
+.highlight {
+	color: #824DB1 !important;
+}
+
+/*
++------------------------------------+
+|									 |
+|			Search Bar				 |
+|									 |
++------------------------------------+
+*/
+
+.searchbar {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+}
+
+::-webkit-input-placeholder {
+   color: #adadad;
+   opacity: 1 !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #adadad;
+   opacity: 1 !important; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #adadad;	
+   opacity: 1 !important; 
+}
+
+:-ms-input-placeholder {  
+   color: #adadad;	
+   opacity: 1 !important; 
+}
+
+input, select, textarea{
+    color: #333;
+}
+
+textarea:focus, input:focus {
+    color: #000;
+}
+
+
+/*
++------------------------------------+
+|									 |
+|			Form Styles				 |
+|									 |
++------------------------------------+
+*/
+
+.checkbox label,
+.control-label {
+	color: #6b6b6b;
+}
+
+.checkbox label {
+	font-size: 0.6em;
+}
+
+.panel-default > .panel-heading {
+	border: none;
+	background-color: rgba(28, 28, 28, 1);
+	color: #fff;
+}
+
+.panel,
+.panel-default {
+	border: none;
+	background-color: rgba(62, 62, 62, 1);
+}
+
+/*
++------------------------------------+
+|									 |
+|			Dashboard Styles	     |
+|									 |
++------------------------------------+
+*/
+
+#server-info {
+	border: none;
+	margin-top: 50px;
+}
+
+#secondary-info {
+	margin-top: 50px;
+}
+
+#server-info thead {
+	background: #8d21c7;
+	font-weight: 300;
+	text-align: center;
+	color: #fff;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background: #eeeeee;
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+	background: #f5f5f5;
+}
+
+#server-info tbody tr > td:first-of-type {
+	font-weight: 400;
+	text-align: right;
+}
+
+#home p:last-of-type {
+	font-size: 0.8em;
+	color: #c4c4c4;
+}
+
+.tag {
+	background: #7d7d7d;
+	padding: 0 5px;
+	color: #eee;
+	font-size: 0.8em;
+	border-radius: 15px;
+}
+
+.online {
+	color: #4faa4b;
+}
+
+.offline {
+	color: #ad3e3e;
+}
+
+.likebtn {
+	color: #fff;
+	text-decoration: none;
+	float: right;
+	margin-right: 10px
+}
+
+.likebtn:hover {
+	color: #d13f3f;
+}
+
+/*
++------------------------------------+
+|									 |
+|		Server List Styles			 |
+|									 |
++------------------------------------+
+*/
+
+.push {
+	overflow: hidden;
+	list-style-type: none;
+	font-weight: 300;
+}
+.push {
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+.push li {
+	height: 60px;
+	line-height: 60px;
+	color: #555;
+	position: relative;
+}
+
+.push li label {
+	background: url(http://placehold.it/468x60);
+	width: 468px;
+	height: 60px;
+	display: inline-block;
+	padding: 0;
+}
+
+.push li label:hover {
+	background-color: rgba(0, 0, 0, 0.36);
+}
+
+.push li input[type=checkbox] {
+	display: none;
+}
+
+.push li .actions {
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: translatex(100%);
+	transition: all .5s ease;
+	font-size: 0;
+}
+
+.push li .actions a {
+	height: 100%;
+	display: inline-block;
+	padding: 0 20px;
+	color: #eee;
+	text-decoration: none;
+	font-size: 14px;
+}
+a.in {
+	background: #ed981a;
+}
+
+a.in:hover {
+	background: #bc7914;
+}
+
+a.ed {
+	background: #3498db;
+}
+
+a.ed:hover {
+	background: #2980b9;
+}
+
+a.rm {
+	background: #189747;
+}
+
+a.rm:hover {
+	background: #14873e;
+}
+
+.push li:hover {
+	color: #fff;
+}
+
+.push li:hover .actions,
+.push li input:checked ~ .actions {
+	transform: translatex(0);
+	transition: all .4s ease;
+}
+
+#server-list {
+	width: 468px;
+	height: 90px;
+	font-size: 18px;
+	margin: 25px auto 100px auto;
+}
+
+#server-list tr:first-of-type td {
+	background: #000;
+	border: 1px solid #fff;
+	color: #fff;
+	vertical-align: middle;
+	height: 30px;
+}
+#server-list tr:last-of-type td {
+	border: 1px solid #fff;
+	height: 60px;
+}
+
+#server-list tr:first-of-type .ranknum {
+	text-align: center;
+	background: #333;
+}
+
+.stitle {
+	text-indent: 10px;
+}
+
+.pcount {
+	text-align: right;
+	padding-right: 5px;
+}
+
+.small {
+	color: #e0e0e0;
+	font-size: smaller;
+}
+
+/*
++------------------------------------+
+|									 |
+|			Banner Styles			 |
+|									 |
++------------------------------------+
+*/
+
+.banner {
+	background: url(../img/endcityhd.jpg) no-repeat center center;
+	width: 100%;
+	height: 500px;
+}
+
+#shulker {
+	width: 233px;
+	height: 269px;
+	position: relative;
+	margin: 45px auto;
+}
+
+.shulker-core {
+	position: absolute;
+	top: 135px;
+	left: 60px;
+	background: url(../img/shulker-core.PNG) no-repeat;
+	width: 115px;
+	height: 115px;
+	z-index: 1;
+}
+
+.shulker-bottom {
+	position: relative;
+	top: 0;
+	left: 0;
+	background: url(../img/shulker-bottom.PNG) no-repeat;
+	width: 233px;
+	height: 73px;
+	z-index: 2;
+}
+
+.shulker-top {
+	position: relative;
+	background: url(../img/shulker-top.PNG) no-repeat;
+	width: 233px;
+	height: 198px;
+	z-index: 3;
+	animation: shulkerbox 3s infinite;
+	will-change: transform;
+}
+
+.banner .info h1 {
+	color: #fff;
+	font-size: 3em;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	text-align: center;
+}
+
+.banner .info h2 {
+	color: #fff;
+	font-size: 1.2em;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 200;
+	text-align: center;
+	letter-spacing: 0.4em;
+}
+
+@media screen and (max-width: 767px) {
+	.banner .info h1 {
+		font-size: 2em;
+	}
+	
+	.banner .info h2 {
+		font-size: 0.8em;
+	}
+}
+
+/*
++------------------------------------+
+|									 |
+|			Footer Styles			 |
+|									 |
++------------------------------------+
+*/
+
+
+
+
+/*
++------------------------------------+
+|									 |
+|			Responsive				 |
+|									 |
++------------------------------------+
+*/
+
+
+	

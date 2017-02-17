@@ -1,6 +1,6 @@
 <?php
 
-namespace Enderlist\Console\Commands;
+namespace Shulkerlist\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

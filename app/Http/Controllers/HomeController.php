@@ -1,10 +1,12 @@
 <?php
 
-namespace Enderlist\Http\Controllers;
+namespace Shulkerlist\Http\Controllers;
 
-use Enderlist\User;
-use Enderlist\Server;
-use Enderlist\Http\Requests;
+use DB;
+use Shulkerlist\Server;
+use Shulkerlist\User;
+use Shulkerlist\Http\Controllers\Auth;
+use Shulkerlist\Http\Requests;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth',['only'=>'dash']);
     }
 
     /**
@@ -26,7 +28,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+	    $servers = DB::table('servers')->where('active', '=', 1)->get();
+        return view('home')->with('servers', $servers);
     }
     
     /**
@@ -34,8 +37,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function dash()
+    public function dash(Request $request)
     {
-        return view('dashboard');
+	    $user = $request->user()->id;
+	    $servers = DB::table('servers')->where('ownerID', '=', $user)->get();
+        return view('dashboard')->with('servers', $servers);
+    }
+    
+    public function setupServerRegPage() {
+	    $country_optons = DB::table('countries')->orderBy('name', 'asc')->lists('name','id');
+
+    	return view('add-server', array('countries' => $country_options));
     }
 }

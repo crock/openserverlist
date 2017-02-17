@@ -11,11 +11,21 @@
 	<div class="section">
 		<h1>Add Server</h1>
 	</div>
-	<form id="add-server" method="post" action="{{ route('add-server') }}">
+	<form id="add-server" method="post" action="{{ route('add-server') }}" enctype="multipart/form-data">
 		<input type="hidden" name="_token" value="{{ Session::token() }}">
+		<input type="hidden" name="ownerID" value="{{ Auth::user()->id }}">
 		<div class="form-group">
 			<label for="sname">Server Name</label>
 			<input class="form-control" type="text" id="sname" name="sname" placeholder="Server Name" length="20">
+		</div>
+		
+		<div class="form-group">
+			<label for="scountry">Country</label>
+			<select class="form-control" type="text" id="scountry" name="scountry">
+				@foreach ($countries as $country)
+				<option value="{{ $country }}">{{ $country }}</option>
+				@endforeach
+			</select>
 		</div>
 		
 		<div class="form-group">
@@ -31,6 +41,11 @@
 		<div class="form-group">
 			<label for="sdesc">Server Description</label>
 			<textarea class="form-control" id="sdesc" name="sdesc" rows="10" placeholder="Write a eye-catching description of your server here to attract many players!" length="5000"></textarea>
+		</div>
+		
+		<div class="form-group">
+			<label for="tags">Tags</label>
+			<input class="form-control" type="text" id="tags" name="tags" placeholder="Tags">
 		</div>
 
 		<div class="form-group">

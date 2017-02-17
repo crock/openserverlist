@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => Enderlist\User::class,
+        'model'  => Shulkerlist\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

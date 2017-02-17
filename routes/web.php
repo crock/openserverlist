@@ -11,23 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'HomeController@dash');
 
 Route::get('/server/{id}', [
-	'uses' => 'ServerController@getServerInfo',
-	'as' => 'info'
+	'uses' => 'ServerController@viewServerPage',
+	'as' => 'id'
 ]);
 
-Route::get('/add-server', function() {
-	return view('add-server');
-});
+Route::get('/add-server', 'HomeController@setupServerRegPage');
 
 Route::post('/add-server', [
 	'uses' => 'ServerController@addServer',
