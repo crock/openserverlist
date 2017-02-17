@@ -17,7 +17,7 @@ class CreateServersTable extends Migration
 			$table->string('sname', 25);
 			$table->ipAddress('sip');
 			$table->string('sport', 5);
-			$table->string('scountry', 255)
+			$table->string('scountry', 255);
 			$table->longText('sdesc', 5000);
 			$table->string('sbanner', 255);
 			$table->boolean('active');
