@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        Shulkerlist\Providers\AppServiceProvider::class,
-        Shulkerlist\Providers\AuthServiceProvider::class,
-        Shulkerlist\Providers\EventServiceProvider::class,
-        Shulkerlist\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 		Collective\Html\HtmlServiceProvider::class,
 		\Conner\Tagging\Providers\TaggingServiceProvider::class,
 		Webpatser\Countries\CountriesServiceProvider::class,

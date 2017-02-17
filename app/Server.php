@@ -1,6 +1,6 @@
 <?php
 
-namespace Shulkerlist;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use \Conner\Tagging\Taggable;

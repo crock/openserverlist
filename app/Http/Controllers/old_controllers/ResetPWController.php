@@ -1,13 +1,13 @@
 <?php
 
-namespace Shulkerlist\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Mail;
 use DB;
-use Shulkerlist\Reset;
-use Shulkerlist\User;
+use App\Reset;
+use App\User;
 use Illuminate\Http\Request;
-use Shulkerlist\Http\Requests;
+use App\Http\Requests;
 
 class ResetPWController extends Controller
 {
@@ -28,7 +28,7 @@ class ResetPWController extends Controller
 	}
 	
 	public function resetPassword(Request $request) {
-		//$toChange = Shulkerlist\User::where('email', $email);
+		//$toChange = App\User::where('email', $email);
 		return view('reset-password', ['token' => $request]);
 	}
 	

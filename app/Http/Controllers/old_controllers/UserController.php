@@ -1,11 +1,11 @@
 <?php
 
-namespace Shulkerlist\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Shulkerlist\User;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Shulkerlist\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Shulkerlist\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Shulkerlist\Http\Requests;
-use Shulkerlist\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 class VoteController extends Controller
 {	
