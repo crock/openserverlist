@@ -1,3 +1,3 @@
-# Shulkerlist
+# Game Server List
 
-Minecraft Server List and Stats Dashboard
+Online Game Server List for Minecraft
