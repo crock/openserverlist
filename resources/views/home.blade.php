@@ -1,7 +1,6 @@
 @extends('layouts.master')
 
-@section('servers')
-
+@section('content')
 @foreach ($servers as $server)
 <table id="server-list" class="server">
 	<tr>
@@ -13,7 +12,7 @@
 		<td colspan="3">
 			<ul class="push">
 				<li>
-					<label style="background: url({{ asset("storage/$server->sbanner") }})">  
+					<label style='background: {{ url("storage/$server->sbanner") }}'>  
 						<input type="checkbox" />
 						&nbsp;
 						  <div class="actions">
@@ -28,5 +27,4 @@
 	</tr>
 </table>
 @endforeach
-
 @endsection

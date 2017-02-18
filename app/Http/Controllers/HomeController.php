@@ -45,8 +45,7 @@ class HomeController extends Controller
     }
     
     public function setupServerRegPage() {
-	    $country_optons = DB::table('countries')->orderBy('name', 'asc')->lists('name','id');
-
+	    $country_options = DB::table('countries')->orderBy('name', 'asc')->get();
     	return view('add-server', array('countries' => $country_options));
     }
 }

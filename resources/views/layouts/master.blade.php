@@ -65,7 +65,7 @@
 	</nav>
 	
 	<div class="container">
-		@yield('servers')
+		@yield('content')
 	</div>
 </body>
 </html>
