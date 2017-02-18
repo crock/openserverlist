@@ -1,6 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
+
+<div class="alert alert-info" role="alert">Sorry, no servers have been added to the database yet. Why don't you add one?</div>
+
 @foreach ($servers as $server)
 <table id="server-list" class="server">
 	<tr>

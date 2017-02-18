@@ -23,12 +23,12 @@
 					<td colspan="3">
 						<ul class="push">
 							<li>
-								<label style="background: url({{ asset("storage/$server->sbanner") }})">  
+								<label style='background: {{ asset("storage/$server->sbanner") }}'>  
 									<input type="checkbox" />
 									&nbsp;
 									  <div class="actions">
 									  	<a href="#" class="dashaction">
-											{{ Form::open(['method' => 'GET', 'route' => ['info', $server->id]]) }}
+											{{ Form::open(['method' => 'GET', 'route' => ['id', $server->id]]) }}
 												<button type="submit" class="btn btn-primary"><i class="fa fa-info" aria-hidden="true"></i> Info</button>
 											{{ Form::close() }}
 										</a>

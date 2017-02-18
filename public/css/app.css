@@ -6168,8 +6168,7 @@ a:hover {
 */
 .navbar {
   border: none !important;
-  border-radius: 0px !important;
-  margin-bottom: 0 !important; }
+  border-radius: 0px !important; }
 
 .navbar-inverse {
   background: #222; }
@@ -6376,24 +6375,24 @@ a.rm:hover {
   transform: translatex(0);
   transition: all .4s ease; }
 
-#server-list {
+.server {
   width: 468px;
   height: 90px;
   font-size: 18px;
   margin: 25px auto 100px auto; }
 
-#server-list tr:first-of-type td {
+.server tr:first-of-type td {
   background: #000;
   border: 1px solid #fff;
   color: #fff;
   vertical-align: middle;
   height: 30px; }
 
-#server-list tr:last-of-type td {
+.server tr:last-of-type td {
   border: 1px solid #fff;
   height: 60px; }
 
-#server-list tr:first-of-type .ranknum {
+.server tr:first-of-type .ranknum {
   text-align: center;
   background: #333; }
 

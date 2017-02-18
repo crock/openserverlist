@@ -6,7 +6,7 @@
     @parent
 @endsection
 
-@section('servers')
+@section('content')
 	<div class="row">	
 		<div class="col-md-4">	
 			<table id="server-info" class="table table-striped table-condensed">
@@ -82,7 +82,7 @@
 					<h3>MOTD:</h3>
 					<p></p>
 					<script>
-						var myMOTD = "{{ preg_replace( "/\r|\n/", "", $info['description']['text'] ) }}";
+						var myMOTD = "{{ preg_replace( "/\r|\n/", "", $info['description'] ) }}";
 						var newMOTD = myMOTD.replaceColorCodes(); //The brackets here are essential.
 						$("#home p:first-of-type").html(newMOTD);
 					</script>
@@ -90,7 +90,7 @@
 					@if ($server->sbanner == NULL)
 						<img src="http://placehold.it/468x60" alt="banner" />
 					@else 
-						<img src="{{ asset("storage/$server->sbanner") }}" alt="banner" />
+						<img src='{{ asset("storage/$server->sbanner") }}' alt="banner" />
 					@endif
 					<h3>Description:</h3>
 					<p>{{ $server->sdesc }}</p>
