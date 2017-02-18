@@ -8,7 +8,7 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<title>
-	Shulkerlist - @yield('title')
+	Game Server List - @yield('title')
 	</title>
 	
 	<!-- Stylesheets -->
@@ -33,17 +33,10 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-		  <button type="button" class="navbar-toggle collapsed nav-search" data-toggle="collapse" data-target="#slsearch" aria-expanded="false">
-			  <span class="sr-only">Toggle search</span>
-			  <i class="fa fa-search"></i>
-		  </button>
-	      <a class="navbar-brand" href="{{ url('/') }}">Shulkerlist</a>
+	      <a class="navbar-brand" href="{{ url('/') }}">Server List</a>
 	    </div>
 		  
 	    <div class="collapse navbar-collapse" id="slnav">
-	      <ul class="nav navbar-nav navbar-left hidden-xs">
-			  <li><a class="search-btn" href="#" data-toggle="collapse" data-target="#slsearch" aria-expanded="false"><i class="fa fa-search" aria-hidden="true"></i> Search</a></li>
-		  </ul>
 	      <ul class="nav navbar-nav navbar-right">
 			<li><a class="highlight" href="#">Buy Premium</a></li>
 	        <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
@@ -70,16 +63,6 @@
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
 	</nav>
-	
-	<form method="get" action="" id="slsearch">
-		<input type="text" class="searchbar" placeholder="Search Shulkerlist...">
-		<input type="submit" class="hidden">
-	</form>
-	
-	@show
-
-	
-	@yield('content')
 	
 	<div class="container">
 		@yield('servers')

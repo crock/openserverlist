@@ -1,19 +1,6 @@
 @extends('layouts.master')
 
-@section('content')
-<div class="banner">
-	<div class="container">
-		<div id="shulker" class="center-block">
-			<div class="shulker-top"></div>
-			<div class="shulker-core"></div>
-			<div class="shulker-bottom"></div>
-		</div>
-		<div class="info center-block">
-			<h1>Welcome to Shulkerlist!</h1>
-			<h2>The Best Minecraft Server List</h2>
-		</div>
-	</div>
-</div>
+@section('servers')
 
 @foreach ($servers as $server)
 <table id="server-list" class="server">
@@ -41,4 +28,5 @@
 	</tr>
 </table>
 @endforeach
+
 @endsection

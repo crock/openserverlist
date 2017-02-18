@@ -16481,14 +16481,16 @@ $(document).ready(function () {
 		collapsible("collapsible");
 	});
 
-	$(".navsearch").on("click", function (e) {
-		// Toggle search
-		$("#search").slideToggle(500, function () {
-			// Focus on the search bar
-			// When animation is complete
-			$(".searchbar").focus();
-		});
-	});
+	// $(".navsearch").on("click", function(e) 
+	// {
+	// 	// Toggle search
+	// 	$("#search").slideToggle(500, function()
+	// 	{
+	// 		// Focus on the search bar
+	// 		// When animation is complete
+	// 		$(".searchbar").focus();	
+	// 	});
+	// });
 
 	// Ping Servers on Homepage
 	var servers = document.getElementsByClassName("server");
