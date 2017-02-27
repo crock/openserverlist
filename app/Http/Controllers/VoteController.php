@@ -8,6 +8,16 @@ use App\Http\Controllers\Controller;
 
 class VoteController extends Controller
 {	
+	/**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
+
     public function sendVotePacket($username) {
 		
 		// Format public key

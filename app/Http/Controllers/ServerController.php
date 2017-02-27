@@ -32,6 +32,7 @@ class ServerController extends Controller
 		$ip = $request['sip'];
 		$port = $request['sport'];
 		$desc = $request['sdesc'];
+		$website = $request['website'];
         $country = $request['scountry'];
 		$path = $request->file('sbanner')->store('banners');
 		$votifier = $request['votifier'];
@@ -48,6 +49,7 @@ class ServerController extends Controller
 		$server->sip = $ip;
 		$server->sport = $port;
 		$server->sdesc = $desc;
+		$server->website = $website;
         $server->scountry = $country;
 		$server->sbanner = $path;
 		$server->active = 0;

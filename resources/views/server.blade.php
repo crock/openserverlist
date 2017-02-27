@@ -51,7 +51,7 @@
 					</tr>
 					<tr>
 						<td>Website</td>
-						<td><a href="#">Visit Site <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
+						<td><a href="{{ $server->website }}">Visit Site <i class="fa fa-external-link" aria-hidden="true"></i></a></td>
 					</tr>
 					<tr>
 						<td>Owner</td>

@@ -19,7 +19,8 @@ Route::get('/dashboard', 'HomeController@dash');
 Route::get('/server/stats', 'Controller@getActiveServers');
 Route::get('/server/{id}', [
 	'uses' => 'ServerController@viewServerPage',
-	'as' => 'id'
+	'as' => 'id',
+	//'middleware' => 'guest'
 ]);
 
 Route::get('/add-server', 'HomeController@setupServerRegPage');

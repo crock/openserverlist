@@ -19,11 +19,13 @@ class CreateServersTable extends Migration
 			$table->string('sport', 5);
 			$table->string('scountry', 255);
 			$table->longText('sdesc', 5000);
+            $table->string('website');
 			$table->string('sbanner', 255);
 			$table->boolean('active');
 			$table->string('hash', 32);
 			$table->bigInteger('ownerID');
 			$table->bigInteger('likes');
+            $table->bigInteger('votes');
 			$table->boolean('votifier');
 			$table->string('vport', 5);
 			$table->string('vpubkey', 256);
