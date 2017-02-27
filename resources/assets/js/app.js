@@ -107,7 +107,6 @@ var app = new Vue({
   created: function () {
 	$.ajax({
 		url: "/server/stats"
-		//context: document.body
 	}).done(function(data) {
 		for (let object of data) {
 			app.servers.push(object);

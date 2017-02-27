@@ -9,13 +9,13 @@
             <td colspan="3">
                 <ul class="push">
                     <li>
-                        <label style="background: url( http://placehold.it/468x60 )">  
+                        <label :style="{ background: 'url(storage/' + serverBanner + ')' }">  
                             <input type="checkbox" />
                             &nbsp;
                             <div class="actions">
                                 <a href="/server/" class="in"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i> Info</a>
                                 <a href="#" class="ed"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {{ serverLikes }}</a>
-                                <a href="#" data-clipboard-action="copy" class="rm"><i class="fa fa-clipboard" aria-hidden="true"></i> COPY</a>
+                                <a href="#" data-clipboard-action="copy" :data-clipboard-text="serverIp + ':' + serverPort" class="rm"><i class="fa fa-clipboard" aria-hidden="true"></i> COPY</a>
                             </div>
                         </label>
                     </li>
