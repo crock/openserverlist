@@ -16,7 +16,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'HomeController@dash');
-
+Route::get('/server/stats', 'Controller@getActiveServers');
 Route::get('/server/{id}', [
 	'uses' => 'ServerController@viewServerPage',
 	'as' => 'id'

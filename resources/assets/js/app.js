@@ -95,3 +95,24 @@ function collapsible(zap) {
         return true;
     }
 }
+
+Vue.component('server', require('../components/Server.vue'));
+
+var app = new Vue({
+  el: '#app',
+  data: {
+	  requestComplete: false,
+	  servers: new Array()
+  },
+  created: function () {
+	$.ajax({
+		url: "/server/stats"
+		//context: document.body
+	}).done(function(data) {
+		for (let object of data) {
+			app.servers.push(object);
+		}
+		app.requestComplete = true;
+	});
+  },
+});

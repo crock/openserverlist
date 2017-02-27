@@ -8,6 +8,7 @@ use App\User;
 use App\Http\Controllers\Auth;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use ActiveServers;
 
 class HomeController extends Controller
 {
@@ -28,8 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-	    $servers = DB::table('servers')->where('active', '=', 1)->get();
-        return view('home')->with('servers', $servers);
+        return view('home')->with('servers', $this->getActiveServers());
     }
     
     /**

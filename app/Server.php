@@ -17,7 +17,7 @@ class Server extends Model
      * @var array
      */
     protected $fillable = [
-        'sname', 'sip', 'sport', 'sdesc', 'active', 'ownerID', 'likes', 'votifier', 'vport', 'sbanner', 'tags', 'country'
+        'sname', 'sip', 'sport', 'sdesc', 'active', 'ownerID', 'likes', 'votifier', 'vport', 'sbanner', 'tags', 'scountry'
     ];
     /**
      * The attributes that should be hidden for arrays.

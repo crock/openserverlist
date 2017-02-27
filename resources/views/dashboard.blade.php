@@ -23,7 +23,7 @@
 					<td colspan="3">
 						<ul class="push">
 							<li>
-								<label style='background: {{ asset("storage/$server->sbanner") }}'>  
+								<label style='background: url({{ asset("storage/$server->sbanner") }})'>  
 									<input type="checkbox" />
 									&nbsp;
 									  <div class="actions">

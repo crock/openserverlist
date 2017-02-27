@@ -15,57 +15,59 @@
 	<script src="https://use.fontawesome.com/5f7fa28864.js"></script>
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}" />
 	
-	<!-- Scripts -->
+</head>
+
+<body>
+	<div id="app">
+		@section('navigation')
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#slnav" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{{ url('/') }}">Server List</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="slnav">
+					<ul class="nav navbar-nav navbar-right">
+				<li><a class="highlight" href="#">Buy Premium</a></li>
+						<li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								@if (Auth::guest())
+						User <span class="caret"></span>
+					@else
+						{{ Auth::user()->username }} <span class="caret"></span>
+					@endif
+							</a>
+							<ul class="dropdown-menu">
+								@if (Auth::guest())
+											<li><a href="{{ url('/login') }}">Login</a></li>
+											<li><a href="{{ url('register') }}">Register</a></li>
+									@else
+											<li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="/settings">Settings</a></li>
+									@endif
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		
+		<div class="container">
+			@yield('content')
+		</div>
+	</div><!-- end div#app -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
 	<script src="{{ asset('js/clipboard.min.js') }}"></script>
 	<script src="{{ asset('js/MinecraftColorCodes.min.3.7.js') }}"></script>
 	<script src="https://mcapi.us/scripts/minecraft.js"></script>
 	<script src="{{ asset('js/app.js') }}"></script>
-</head>
-
-<body>
-	@section('navigation')
-	<nav class="navbar navbar-inverse">
-	  <div class="container">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#slnav" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href="{{ url('/') }}">Server List</a>
-	    </div>
-		  
-	    <div class="collapse navbar-collapse" id="slnav">
-	      <ul class="nav navbar-nav navbar-right">
-			<li><a class="highlight" href="#">Buy Premium</a></li>
-	        <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	          	@if (Auth::guest())
-					User <span class="caret"></span>
-				@else
-					{{ Auth::user()->username }} <span class="caret"></span>
-				@endif
-	          </a>
-	          <ul class="dropdown-menu">
-	            @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('register') }}">Register</a></li>
-                @else
-                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="/settings">Settings</a></li>
-                @endif
-	          </ul>
-	        </li>
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
-	
-	<div class="container">
-		@yield('content')
-	</div>
 </body>
 </html>

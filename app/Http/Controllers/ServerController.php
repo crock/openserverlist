@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Routing\ResponseFactory;
 
 class ServerController extends Controller
 {
@@ -31,6 +32,7 @@ class ServerController extends Controller
 		$ip = $request['sip'];
 		$port = $request['sport'];
 		$desc = $request['sdesc'];
+        $country = $request['scountry'];
 		$path = $request->file('sbanner')->store('banners');
 		$votifier = $request['votifier'];
 		$vport = $request['vport'];
@@ -46,6 +48,7 @@ class ServerController extends Controller
 		$server->sip = $ip;
 		$server->sport = $port;
 		$server->sdesc = $desc;
+        $server->scountry = $country;
 		$server->sbanner = $path;
 		$server->active = 0;
 		$server->hash = uniqid("EL_".md5($name), true);
@@ -107,7 +110,7 @@ class ServerController extends Controller
 	public function getActiveServers() {
 		$servers = DB::table('servers')->where('active', '=', 1)->get();
 		
-		 return $servers;
+		 return response()->json($servers);
 	}
 	
 	public function getServerInfo($id) {
