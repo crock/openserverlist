@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'HomeController@dash');
 Route::get('/server/stats', 'Controller@getActiveServers');
+Route::get('/server/stats/extra', 'Controller@getServerInfo');
 Route::get('/server/{id}', [
 	'uses' => 'ServerController@viewServerPage',
 	'as' => 'id',

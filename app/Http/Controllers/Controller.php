@@ -13,16 +13,28 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function getActiveServers() {
-        $servers = DB::table('servers')
+        return DB::table('servers')
                      ->where('active', '=', 1)
                      ->select('id','sname','sip','sport','sbanner','likes')
                      ->get();
-        return $servers;
+    }
+
+    public function getServerInfo($id) {
+        return DB::table('servers')
+                    ->where('id', '=', $id)
+                    ->select('id','sname','sip','sport','sbanner','likes','votes','scountry','sdesc','website','tags')
+                    ->get();
     }
 }
 
 trait ActiveServers {
     public function getActiveServers() {
         parent::getActiveServers();
+    }
+}
+
+trait ServerTable {
+    public function getServerInfo() {
+        parent::getServerInfo();
     }
 }

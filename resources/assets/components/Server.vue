@@ -1,4 +1,4 @@
-<template id="server-template">
+<template>
     <table id="server-list" class="server">
         <tr>
             <td class="ranknum" width="90px">{{ serverIndex }}</td>
@@ -28,9 +28,6 @@
 <script>
     export default {
 		props: ['serverIndex', 'serverName','serverIp','serverPort','serverBanner','serverLikes'],
-        ready() {
-            console.log('Server Item Component ready.')
-        }
     }
 </script>
 

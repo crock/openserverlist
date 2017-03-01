@@ -109,12 +109,6 @@ class ServerController extends Controller
 		return view('server')->with($data);
 	}
 	
-	public function getActiveServers() {
-		$servers = DB::table('servers')->where('active', '=', 1)->get();
-		
-		 return response()->json($servers);
-	}
-	
 	public function getServerInfo($id) {
 		$server = DB::table('servers')->where('id', '=', $id)->get()->first();
 		$user = DB::table('users')->where('id', '=', $server->ownerID)->get()->first();

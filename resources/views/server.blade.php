@@ -82,9 +82,9 @@
 					<h3>MOTD:</h3>
 					<p></p>
 					<script>
-						var myMOTD = "{{ preg_replace( "/\r|\n/", "", $info['description'] ) }}";
-						var newMOTD = myMOTD.replaceColorCodes(); //The brackets here are essential.
-						$("#home p:first-of-type").html(newMOTD);
+						//var myMOTD = "{{ preg_replace( "/\r|\n/", "", $info['description'] ) }}";
+						//var newMOTD = myMOTD.replaceColorCodes(); //The brackets here are essential.
+						//$("#home p:first-of-type").html(newMOTD);
 					</script>
 					<h3>Banner:</h3>
 					@if ($server->sbanner == NULL)
