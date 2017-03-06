@@ -60,22 +60,9 @@
 	</nav>
 		
 	<div class="container">
-		@yield('content')
 		<div id="app">
-		@if (isset($vueView) && $vueView == "homepage")
-			<div class="alert alert-info" role="alert">Sorry, no servers have been added to the database yet. Why don't you add one?</div>
-			<server is="server"
-					v-for="server in servers"
-					:server-index="server.id"
-					:server-name="server.sname"
-					:server-ip="server.sip"
-					:server-port="server.sport"
-					:server-banner="server.sbanner"
-					:server-likes="server.likes"
-					v-bind:data="server"
-					v-bind:key="server.id"></server>
-		@endif
-		</div><!-- end div#app -->
+			@yield('content')
+		</div>
 	</div>
 	<!--<script src="https://mcapi.us/scripts/minecraft.js"></script>-->
 	<script src="{{ elixir('js/bundle.js') }}"></script>

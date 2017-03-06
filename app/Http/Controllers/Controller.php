@@ -19,7 +19,13 @@ class Controller extends BaseController
                      ->get();
     }
 
-    public function getServerInfo($id) {
+    public function getAllServers() {
+        return DB::table('servers')
+                    ->select('id','sname','sip','sport','sbanner','likes','votes','scountry','sdesc','website','tags')
+                    ->get();
+    }
+
+    public function getServer($id) {
         return DB::table('servers')
                     ->where('id', '=', $id)
                     ->select('id','sname','sip','sport','sbanner','likes','votes','scountry','sdesc','website','tags')
@@ -33,8 +39,14 @@ trait ActiveServers {
     }
 }
 
-trait ServerTable {
-    public function getServerInfo() {
-        parent::getServerInfo();
+trait AllServers {
+    public function getAllServers() {
+        parent::getAllServers();
+    }
+}
+
+trait ServerInfo {
+    public function getServer($id) {
+        parent::getServer($id);
     }
 }

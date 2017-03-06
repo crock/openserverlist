@@ -19,7 +19,7 @@
 				<tbody>
 					<tr>
 						<td>Status</td>
-						<td class="{{ ($info) ? "online" : "offline" }}">{{ ($info) ? "Online" : "Offline" }}</td>
+						<td class="{{ ($info) ? 'online' : 'offline' }}">{{ ($info) ? "Online" : "Offline" }}</td>
 					</tr>
 					<tr>
 						<td>IP</td>
@@ -31,11 +31,11 @@
 					</tr>
 					<tr>
 						<td>Players</td>
-						<td class="{{ ($info) ? "" : "faded" }}">{{ ($info) ? $info['players']['online']."/".$info['players']['max'] : "No Connection" }}</td>
+						<td class="{{ ($info) ? "" : 'faded' }}">{{ ($info) ? $info['players']['online']."/".$info['players']['max'] : "No Connection" }}</td>
 					</tr>
 					<tr>
 						<td>Version</td>
-						<td class="{{ ($info) ? "" : "faded" }}">{{ ($info) ? $info['version']['name'] : "No Connection" }}</td>
+						<td class="{{ ($info) ? "" : 'faded' }}">{{ ($info) ? $info['version']['name'] : "No Connection" }}</td>
 					</tr>
 					<tr>
 						<td>Country</td>
@@ -61,7 +61,7 @@
 						<td>Tags</td>
 						<td>
 						@foreach($tags as $tag)
-							<span class="tag">{{ $tag }}</span>
+							<a href="/tags/{{ $tag->slug }}" class="tag">{{ $tag->name }}</a>
 						@endforeach
 						</td>
 					</tr>
@@ -79,20 +79,12 @@
 				
 				<div class="tab-content">
 				<div id="home" class="tab-pane fade in active">
-					<h3>MOTD:</h3>
-					<p></p>
-					<script>
-						//var myMOTD = "{{ preg_replace( "/\r|\n/", "", $info['description'] ) }}";
-						//var newMOTD = myMOTD.replaceColorCodes(); //The brackets here are essential.
-						//$("#home p:first-of-type").html(newMOTD);
-					</script>
-					<h3>Banner:</h3>
+					<img src="{{ $info['favicon'] }}" alt="server icon">
 					@if ($server->sbanner == NULL)
 						<img src="http://placehold.it/468x60" alt="banner" />
 					@else 
 						<img src='{{ asset("storage/$server->sbanner") }}' alt="banner" />
 					@endif
-					<h3>Description:</h3>
 					<p>{{ $server->sdesc }}</p>
 				</div>
 				<div id="menu1" class="tab-pane fade">

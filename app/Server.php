@@ -3,12 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use \Conner\Tagging\Taggable;
 
 class Server extends Model
 {
-	use Taggable;
-	
+    use \Conner\Tagging\Taggable;
+    	
 	protected $table = 'servers';
 	
     /**

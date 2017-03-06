@@ -29501,33 +29501,6 @@ if (module.hot) {(function () {  module.hot.accept()
   }
 })()}
 },{"vue":18,"vue-hot-reload-api":16,"vueify/lib/insert-css":19}],21:[function(require,module,exports){
-var __vueify_insert__ = require("vueify/lib/insert-css")
-var __vueify_style__ = __vueify_insert__.insert("\n\n")
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = {
-  props: ['serverIndex', 'serverName', 'serverIp', 'serverPort', 'serverBanner', 'serverLikes']
-};
-if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "\n<table id=\"server-info\" class=\"table table-striped table-condensed\" _v-66b3ed16=\"\">\n    <thead _v-66b3ed16=\"\">\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">{{ $server-&gt;sname }}</td>\n            <td _v-66b3ed16=\"\"><a class=\"likebtn\" href=\"#\" _v-66b3ed16=\"\"><i class=\"fa fa-heart-o\" _v-66b3ed16=\"\"></i></a></td>\n        </tr>\n    </thead>\n    <tbody _v-66b3ed16=\"\">\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Status</td>\n            <td class=\"{{ ($info) ? \" online\"=\"\" :=\"\" \"offline\"=\"\" }}\"=\"\" _v-66b3ed16=\"\">{{ ($info) ? \"Online\" : \"Offline\" }}</td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">IP</td>\n            <td _v-66b3ed16=\"\">{{ $server-&gt;sip }}</td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Port</td>\n            <td _v-66b3ed16=\"\">{{ $server-&gt;sport }}</td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Players</td>\n            <td class=\"{{ ($info) ? \" \"=\"\" :=\"\" \"faded\"=\"\" }}\"=\"\" _v-66b3ed16=\"\">{{ ($info) ? $info['players']['online'].\"/\".$info['players']['max'] : \"No Connection\" }}</td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Version</td>\n            <td class=\"{{ ($info) ? \" \"=\"\" :=\"\" \"faded\"=\"\" }}\"=\"\" _v-66b3ed16=\"\">{{ ($info) ? $info['version']['name'] : \"No Connection\" }}</td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Country</td>\n            <td _v-66b3ed16=\"\">{{ $server-&gt;scountry }}</td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Votes</td>\n            <td _v-66b3ed16=\"\">{{ $server-&gt;votes }}</td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Likes</td>\n            <td _v-66b3ed16=\"\">{{ $server-&gt;likes }}</td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Website</td>\n            <td _v-66b3ed16=\"\"><a href=\"{{ $server->website }}\" _v-66b3ed16=\"\">Visit Site <i class=\"fa fa-external-link\" aria-hidden=\"true\" _v-66b3ed16=\"\"></i></a></td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Owner</td>\n            <td _v-66b3ed16=\"\">{{ $user-&gt;username }}</td>\n        </tr>\n        <tr _v-66b3ed16=\"\">\n            <td _v-66b3ed16=\"\">Tags</td>\n            <td _v-66b3ed16=\"\">\n            @foreach($tags as $tag)\n                <span class=\"tag\" _v-66b3ed16=\"\">{{ $tag }}</span>\n            @endforeach\n            </td>\n        </tr>\n    </tbody>\n</table>\n"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.dispose(function () {
-    __vueify_insert__.cache["\n\n"] = false
-    document.head.removeChild(__vueify_style__)
-  })
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-66b3ed16", module.exports)
-  } else {
-    hotAPI.update("_v-66b3ed16", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
-},{"vue":18,"vue-hot-reload-api":16,"vueify/lib/insert-css":19}],22:[function(require,module,exports){
 'use strict';
 
 var _vue = require('vue');
@@ -29736,19 +29709,19 @@ if (document.getElementById("tabs")) {
 _vue2.default.use(_vueResource2.default);
 
 _vue2.default.component('server', require('../components/Server.vue'));
-_vue2.default.component('server-info', require('../components/ServerInfo.vue'));
 
 var app = new _vue2.default({
   el: '#app',
   data: {
     servers: new Array(),
-    error: false
+    error: false,
+    patt: /\/server\/[0-9]+/
   },
   ready: function ready() {
     var _this = this;
 
     // GET /someUrl
-    this.$http.get('/server/stats').then(function (response) {
+    this.$http.get('/server/stats/active').then(function (response) {
 
       // get body data
       _this.servers = response.body;
@@ -29760,6 +29733,6 @@ var app = new _vue2.default({
 });
 
 
-},{"../components/Server.vue":20,"../components/ServerInfo.vue":21,"bootstrap-sass":1,"clipboard":4,"jquery":9,"selectize":13,"vue":18,"vue-resource":17}]},{},[22]);
+},{"../components/Server.vue":20,"bootstrap-sass":1,"clipboard":4,"jquery":9,"selectize":13,"vue":18,"vue-resource":17}]},{},[21]);
 
 //# sourceMappingURL=bundle.js.map

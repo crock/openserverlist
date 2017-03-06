@@ -105,8 +105,7 @@ class ServerController extends Controller
 	}
 	
 	public function viewServerPage($id) {
-		$data = $this->getServerInfo($id);
-		return view('server')->with($data);
+		return view('server')->with($this->getServerInfo($id));
 	}
 	
 	public function getServerInfo($id) {
@@ -116,28 +115,21 @@ class ServerController extends Controller
 		$ip = $server->sip;
 		$port = $server->sport;
 		
-		$tags = Server::existingTags()->pluck('name');
+		$ts = Server::with('tagged')->first();
+		$tags = $ts->tags; 
 		
-		$url = "http://mcapi.us/server/status?ip=$ip&port=$port";
-		$content = file_get_contents($url);
-		$json_a = json_decode($content, true);
-		
-		if ($json_a['online'] == false) {
-			$info = false;
-		} else {
-			try {
-				$Query = new MinecraftPing( $ip, $port );
-				$info = $Query->Query();
-			}
-			catch( MinecraftPingException $e ) {
-				echo $e->getMessage();
-			}
-			finally {
-				$Query->Close();
-			}
+		try {
+			$Query = new MinecraftPing( $ip, $port );
+			$info = $Query->Query();
 		}
-		
-				
+		catch( MinecraftPingException $e ) {
+			echo $e->getMessage();
+			$info = false;
+		}
+		finally {
+			$Query->Close();
+		}
+			
 		return array('server'=>$server,'info'=>$info,'tags'=>$tags,'user'=>$user);
 	}
 

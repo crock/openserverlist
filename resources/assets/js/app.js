@@ -4,24 +4,25 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 Vue.component('server', require('../components/Server.vue'))
-Vue.component('server-info', require('../components/ServerInfo.vue'))
 
 var app = new Vue({
   el: '#app',
   data: {
 	  servers: new Array(),
-	  error: false
+	  error: false,
+	  patt: /\/server\/[0-9]+/
   },
   ready: function () {
-		// GET /someUrl
-		this.$http.get('/server/stats').then(response => {
+	// GET /someUrl
+	this.$http.get('/server/stats/active').then(response => {
 
-			// get body data
-			this.servers = response.body;
+		// get body data
+		this.servers = response.body;
 
-		}, response => {
-			// error callback
-			this.error = False
-		});
+	}, response => {
+		// error callback
+		this.error = False
+	});
+		
    },
 })
