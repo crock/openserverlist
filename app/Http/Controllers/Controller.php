@@ -15,13 +15,20 @@ class Controller extends BaseController
     public function getActiveServers() {
         return DB::table('servers')
                      ->where('active', '=', 1)
-                     ->select('id','sname','sip','sport','sbanner','likes')
+                     ->select('id','sname','sip','sport','likes','votes','scountry','sbanner')
+                     ->get();
+    }
+
+    public function getInactiveServers() {
+        return DB::table('servers')
+                     ->where('active', '=', 0)
+                     ->select('id','sname','sip','sport','likes','votes','scountry','sbanner')
                      ->get();
     }
 
     public function getAllServers() {
         return DB::table('servers')
-                    ->select('id','sname','sip','sport','sbanner','likes','votes','scountry','sdesc','website','tags')
+                    ->select('id','sname','sip','sport','likes','votes','scountry','sbanner')
                     ->get();
     }
 
@@ -36,6 +43,12 @@ class Controller extends BaseController
 trait ActiveServers {
     public function getActiveServers() {
         parent::getActiveServers();
+    }
+}
+
+trait InactiveServers {
+    public function getInactiveServers() {
+        parent::getInactiveServers();
     }
 }
 

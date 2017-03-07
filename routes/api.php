@@ -12,3 +12,7 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::get('/server/stats/active', 'Controller@getActiveServers');
+Route::get('/server/stats/inactive', 'Controller@getInactiveServers');
+Route::get('/server/stats/all', 'Controller@getAllServers');

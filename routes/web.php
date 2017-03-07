@@ -13,10 +13,8 @@
 
 Auth::routes();
 Route::get('/logout', 'Auth\LoginController@logout');
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'HomeController@dash');
-Route::get('/server/stats/active', 'Controller@getActiveServers');
-Route::get('/server/stats/all', 'Controller@getAllServers');
 Route::get('/server/{id}', [
 	'uses' => 'ServerController@viewServerPage',
 	'as' => 'id',

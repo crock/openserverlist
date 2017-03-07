@@ -15,7 +15,7 @@ use Illuminate\Contracts\Routing\ResponseFactory;
 
 class ServerController extends Controller
 {
-	
+	//use ActiveServers;
 	/**
      * Create a new controller instance.
      *
@@ -103,6 +103,40 @@ class ServerController extends Controller
 	public function deleteServer($id) {
 		
 	}
+
+	public function pingServer($ip, $port) {
+		try {
+			$Query = new MinecraftPing( $ip, $port );
+			$stats = $Query->Query();
+		}
+		catch( MinecraftPingException $e ) {
+			echo $e->getMessage();
+			return false;
+		}
+		finally {
+			$Query->Close();
+			return $stats;
+		}
+	}
+
+	public function getServers() {
+		$servers = $this->getActiveServers();
+		$s = [];
+
+		foreach ($servers as $server) {
+
+			// Converts stdClass object to array
+			$array = json_decode(json_encode($server), True);
+
+			// Returns array of json objects
+			$data = $this->pingServer($server->sip,$server->sport);
+
+			// Merges server data from DB with the extra query information 
+			array_push($s, array_merge($array, $data));
+		}
+
+		return $s;
+	}
 	
 	public function viewServerPage($id) {
 		return view('server')->with($this->getServerInfo($id));
@@ -111,24 +145,13 @@ class ServerController extends Controller
 	public function getServerInfo($id) {
 		$server = DB::table('servers')->where('id', '=', $id)->get()->first();
 		$user = DB::table('users')->where('id', '=', $server->ownerID)->get()->first();
-		$info;
 		$ip = $server->sip;
 		$port = $server->sport;
 		
 		$ts = Server::with('tagged')->first();
 		$tags = $ts->tags; 
 		
-		try {
-			$Query = new MinecraftPing( $ip, $port );
-			$info = $Query->Query();
-		}
-		catch( MinecraftPingException $e ) {
-			echo $e->getMessage();
-			$info = false;
-		}
-		finally {
-			$Query->Close();
-		}
+		$info = $this->pingServer($ip,$port);
 			
 		return array('server'=>$server,'info'=>$info,'tags'=>$tags,'user'=>$user);
 	}

@@ -14,7 +14,7 @@ require('laravel-elixir-vueify');
 
 elixir(function(mix) {
     mix.sass('app.scss')
-        .scripts(['clipboard.js', 'colorfinder.js' ,'other.js', 'tagging.js', 'app.js'], 'resources/assets/js/bundle.js')
+        .scripts(['clipboard.js', 'colorfinder.js' ,'other.js', 'tagging.js'], 'resources/assets/js/bundle.js')
         .browserify('bundle.js')
         .version(['css/app.css', 'js/bundle.js'])
         .browserSync({
