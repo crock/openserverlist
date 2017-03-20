@@ -43,7 +43,7 @@ Route::post('/delete-server/{id}', [
 	'as' => 'delete'
 ]);
 
-Route::post('/vote/{username}', [
+Route::get('/vote/{username}', [
 	'uses' => 'VoteController@sendVotePacket',
 	'as' => 'vote'
 ]);

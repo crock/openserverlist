@@ -21,11 +21,11 @@ class VoteController extends Controller
     public function sendVotePacket($username) {
 		
 		// Format public key
-		$public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsBValUIW3roWYrDUag4bUo8SgCQ9CMJERHdPHPzJt9tBKw2SIYKokniJxdEwrOYnxQ7VeTUwsDrYi11ENQgprWCjdxXIouJ5hWQQS6/mNEMlbxONbXMunfQgAa7/M1FDRN56o4/w/uS/tOsNSrSHrpZV+szcuvIwaoZa+XsBhlhmfldE0kdcXLKilrluDLadUK6G5f45PW8G77IILODU8eaeG5UEC5acjzILtTw7w2Cog92t8g+MLIS05XrQkT4cGW1nuNwB8h20QTFWSQX7SxuxcQKaJaVWo3efIXsH/vExCh55nv+3YyKQxlCmNOd7PZnYOwHPszg6ojQQzcUg+QIDAQAB";
+		$public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgR2wHEHaPyWQ6mCv25gdO36WEalLxxab0mPmvROrjcEgILWNdFG+i+f33RJzmzb8LJHDAmFNqPgCzLq2daLawvK3DD/XTKbQnNf+Ftfed63PwAcm02cfxg8dgBY5LNa3pKlAydLs7JAToAylm200RljACrZOaD9zadSy5fZs+dCVDoFWkgnp9FG6YrzgVczXU7UKCA8vrT6n3RJo3FuaIu6TnHr4O2nXFL4BDtKtaaOwkWqey6XqtLxKMhOwbYn6AJHU0J7W7Qj0kCAu2ZJjIn+PHC0rkXcLL6faNDXCsicK5HlTOA3gk+5pMW81biH4RC3Km2DgmO+tLv+w3F6SIQIDAQAB";
 		$wrapped = wordwrap($public_key, 65, "\n", true);
 		$key = sprintf("-----BEGIN PUBLIC KEY-----\n%s\n-----END PUBLIC KEY-----", $wrapped);
 		
-		$ip = "172.93.108.138";
+		$ip = "99.235.20.78";
 		$port = 8192;
 		
 		$vote = sprintf("VOTE\n%s\n%s\n%s\n%d\n", 'MC-Roulette', $username,  $_SERVER['REMOTE_ADDR'], time());
@@ -33,7 +33,7 @@ class VoteController extends Controller
 		$socket = fsockopen($ip, $port);
 		if (fwrite($socket, $data)) {
 			fclose($socket);
-			return view('dashboard')->with('result', "Successfully voted!");
+			echo "Successfully voted!";
 			return true;
 		} else {
 			fclose($socket);
