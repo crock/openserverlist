@@ -1,6 +1,8 @@
 vendor/
+storage/
 node_modules/
 .DS_Store
 .idea/
 .vscode/
 .vagrant/
+openserverlist.iml
