@@ -4,3 +4,6 @@ node_modules/
 .idea/
 .vscode/
 .vagrant/
+.env
+storage/
+openserverlist.iml
