@@ -135,7 +135,7 @@ return [
     |
     */
 
-    'domain' => 'homestead.app',
+    'domain' => env('SESSION_DOMAIN', 'localhost'),
 
     /*
     |--------------------------------------------------------------------------
