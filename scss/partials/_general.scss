@@ -6,3 +6,15 @@
     height: 160px;
     margin: 0 auto;
 }
+
+h2 {
+    font-weight: normal;
+    font-size: 36px;
+    margin: 50px 0;
+    text-align: center;
+    display: block;
+
+    span {
+        font-weight: bold;
+    }
+}

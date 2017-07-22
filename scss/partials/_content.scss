@@ -1,0 +1,22 @@
+#features {
+    margin: 50px 0;
+    text-align: center;
+
+    h4 {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 20px 0 10px 0;
+    }
+
+    p {
+        font-weight: 300;
+    }
+
+    .icon {
+        font-size: 3em;
+
+        .fa {
+            font-size: inherit;
+        }
+    }
+}
