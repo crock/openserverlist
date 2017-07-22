@@ -1,0 +1,7 @@
+#logo {
+  background: url(../img/logo-black.png) no-repeat center center;
+  background-size: contain;
+  display: block;
+  width: 80%;
+  height: 160px;
+  margin: 0 auto; }
